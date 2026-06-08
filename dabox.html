@@ -1,0 +1,777 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>dabox — Hacemos crecer el ahorro de tu gente</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="assets/symbol-color.svg">
+<template id="__bundler_thumbnail" data-bg-color="#FAF9F5">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FAF9F5"/>
+    <g transform="translate(600 400)">
+      <text x="0" y="40" text-anchor="middle" font-family="Poppins, sans-serif" font-weight="900" font-size="180" letter-spacing="-10" fill="#283A7F">dabox</text>
+      <rect x="-200" y="100" width="400" height="6" rx="3" fill="#FF5A00"/>
+    </g>
+  </svg>
+</template>
+</head>
+<body>
+
+<!-- ANNOUNCE BAR -->
+<div class="announce">
+  <div class="wrap announce-inner">
+    <span>Caja de ahorro empresarial · operada bajo figura de Asociación Civil</span>
+    <span class="sep">·</span>
+    <span>Vehículo institucional Compass</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top">
+      <img class="brand-mark" src="assets/symbol-color.svg" alt="">
+      <span class="brand-word">dabox</span>
+    </a>
+    <div class="nav-links">
+      <a href="#producto">Cómo funciona</a>
+      <a href="#beneficios">Beneficios</a>
+      <a href="#calculadora">Rendimiento</a>
+      <a href="#empresa">Para tu empresa</a>
+      <a href="#colaborador">Para tu gente</a>
+      <a href="#faq">Preguntas</a>
+    </div>
+    <div class="nav-cta">
+      <a href="#contacto" class="btn btn-primary">Agendar demo<span class="arr">→</span></a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-brand">
+        <img src="assets/symbol-color.svg" alt="" class="hero-brand-mark">
+        <div class="hero-brand-word">dabox</div>
+      </div>
+      <span class="eyebrow">Caja de ahorro digital · B2B</span>
+      <h1>Hacemos crecer<br>el <span class="hl">ahorro</span> de tu gente.</h1>
+      <p class="lede">
+        <strong>dabox</strong> es la caja de ahorro digital para empresas mexicanas.
+        Tus colaboradores ahorran sin esfuerzo vía descuento por nómina, con rendimiento atado a CETES y respaldo institucional. Sin carga para tu RH, sin costo para tu equipo.
+      </p>
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary btn-lg">Agendar demo de 20 min<span class="arr">→</span></a>
+        <a href="#producto" class="btn btn-ghost btn-lg">Cómo funciona</a>
+      </div>
+      <div class="trust">
+        <div><strong>3–6 meses</strong> de implementación</div>
+        <span class="dot"></span>
+        <div><strong>Asociación Civil</strong> formal por empresa</div>
+        <span class="dot"></span>
+        <div><strong>Vehículo Compass</strong></div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-card a">
+        <div class="fc-label">RENDIMIENTO MENSUAL</div>
+        <div class="fc-num"><span class="cur">$</span>1,247.<small>50</small></div>
+        <div class="fc-bar"><div class="fc-fill" style="width:72%"></div></div>
+        <div class="fc-meta"><span>Ahorrado</span><span>+ rendimiento CETES</span></div>
+      </div>
+      <div class="float-card b">
+        <div class="fc-row">
+          <div class="fc-dot"></div>
+          <div>
+            <div class="fc-t">Aportación quincenal</div>
+            <div class="fc-s">Descuento automático vía nómina</div>
+          </div>
+        </div>
+        <div class="fc-row" style="margin-top:14px">
+          <div class="fc-amt">$ 350.00</div>
+          <div class="fc-tag">Confirmado</div>
+        </div>
+      </div>
+      <!-- Phone -->
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="statusbar">
+            <span>9:41</span>
+            <span class="sb-icons"></span>
+          </div>
+          <div class="phone-head">
+            <div>
+              <div class="phone-greeting">Hola,</div>
+              <div class="phone-name">Juan Hernández</div>
+            </div>
+            <div class="avatar">JH</div>
+          </div>
+          <div class="balance-card">
+            <div class="balance-label">Tu ahorro acumulado</div>
+            <div class="balance-num" id="balanceNum">$ 18,420.<small>15</small></div>
+            <div class="balance-meta">
+              <div><span class="bm-l">Aportado</span><span class="bm-v">$ 16,800.00</span></div>
+              <div><span class="bm-l">Rendimiento</span><span class="bm-v" style="color:var(--orange)">+ $ 1,620.15</span></div>
+            </div>
+          </div>
+          <div class="next-card">
+            <div>
+              <div class="nc-l">Próxima aportación</div>
+              <div class="nc-d">Vie 30 abr · $ 350</div>
+            </div>
+            <div class="nc-tag">Quincenal</div>
+          </div>
+          <div class="window-card">
+            <div class="wc-row">
+              <span class="wc-l">Próxima ventana de retiro</span>
+              <span class="wc-v">Julio 2026</span>
+            </div>
+            <div class="wc-bar"><div class="wc-fill" style="width:42%"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TAGLINE BAND -->
+<section class="band" aria-hidden="true">
+  <div class="band-track">
+    <span>dabox</span><span class="bsep">/</span>
+    <span>ahorro</span><span class="bsep">/</span>
+    <span>dabox</span><span class="bsep">/</span>
+    <span>bienestar</span><span class="bsep">/</span>
+    <span>dabox</span><span class="bsep">/</span>
+    <span>tu gente</span><span class="bsep">/</span>
+    <span>dabox</span><span class="bsep">/</span>
+    <span>mes con mes</span><span class="bsep">/</span>
+    <span>dabox</span><span class="bsep">/</span>
+    <span>cetes</span><span class="bsep">/</span>
+    <span>dabox</span><span class="bsep">/</span>
+    <span>simple</span><span class="bsep">/</span>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="wrap metrics-grid">
+    <div class="metric">
+      <div class="n" data-count="22">0</div>
+      <div class="u">millones</div>
+      <div class="l">de trabajadores formales en México sin caja de ahorro accesible</div>
+    </div>
+    <div class="metric">
+      <div class="n" data-count="0" data-prefix="$">$0</div>
+      <div class="u">para tu equipo</div>
+      <div class="l">El colaborador no paga nada. La empresa cubre el servicio.</div>
+    </div>
+    <div class="metric">
+      <div class="n" data-count="2" data-suffix="x">0x</div>
+      <div class="u">al año</div>
+      <div class="l">Retiros programados en julio y diciembre, alineados a aguinaldo y vacaciones.</div>
+    </div>
+    <div class="metric">
+      <div class="n" data-count="0.75" data-suffix="%">0%</div>
+      <div class="u">spread dabox</div>
+      <div class="l">Mecánica transparente. Tu gente ve cómo se construye su rendimiento.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="producto" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Cómo funciona</span>
+      <h2>Tu RH lo aprueba una vez al mes.<br>El ahorro ocurre solo.</h2>
+      <p class="lede">Una operación pensada para no agregarle pasos a nadie. Tu RH carga un layout estandarizado; <strong>dabox</strong> hace el resto.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="hn">01</div>
+        <h3>Firma del contrato</h3>
+        <p>Constituimos la Asociación Civil de tu empresa con opinión legal formal. Tú firmas un solo contrato; nosotros operamos.</p>
+        <div class="hs-meta">Semana 1–4</div>
+      </div>
+      <div class="how-step">
+        <div class="hn">02</div>
+        <h3>Comité técnico</h3>
+        <p>Definimos juntos las reglas: monto sugerido, tope, política de retiros, condiciones de préstamo. Queda en acta.</p>
+        <div class="hs-meta">Semana 4–8</div>
+      </div>
+      <div class="how-step">
+        <div class="hn">03</div>
+        <h3>Alta de colaboradores</h3>
+        <p>Tu gente se inscribe digital. Cada quien decide cuánto aportar. Sin papeleo, sin pasar por RH.</p>
+        <div class="hs-meta">Semana 8–10</div>
+      </div>
+      <div class="how-step">
+        <div class="hn">04</div>
+        <h3>Descuento por nómina</h3>
+        <p>RH carga un layout único cada periodo. Las aportaciones llegan a la AC y se invierten vía Compass.</p>
+        <div class="hs-meta">Mensual recurrente</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL HOOK -->
+<section id="beneficios" class="section dark">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Para quién es</span>
+      <h2>Dos formas de sumar dabox<br>a tu organización.</h2>
+    </div>
+    <div class="hook-grid">
+      <article class="hook">
+        <div class="hk-tag">Hook A · Para CFO / Dirección General</div>
+        <h3>Moderniza tu caja<br>de ahorro interna.</h3>
+        <p class="hk-desc">¿Tu empresa ya tiene caja en Excel, con un tesorero interno? La estás cargando con riesgo legal, contable y operativo. <strong>dabox</strong> la convierte en un esquema profesional, auditable y digital — sin perder la cultura de ahorro que ya construiste.</p>
+        <ul class="hk-list">
+          <li>Trazabilidad y auditabilidad fiscal</li>
+          <li>Vehículo institucional Compass en lugar de caja chica</li>
+          <li>Rendimiento atado a CETES en lugar de cero o crédito interno</li>
+          <li>Marco legal con AC formal y comité técnico</li>
+        </ul>
+      </article>
+      <article class="hook">
+        <div class="hk-tag">Hook B · Para Dirección de RH</div>
+        <h3>Beneficio premium,<br>sin costo para tu gente.</h3>
+        <p class="hk-desc">Súmale al paquete de beneficios un esquema que tu equipo siente mes con mes. El colaborador no paga nada. RH no administra nada. <strong>dabox</strong> entrega el layout, opera la caja y comunica directamente al ahorrador.</p>
+        <ul class="hk-list">
+          <li>Diferenciador real para retención y atracción</li>
+          <li>Cero esfuerzo administrativo: layout único entregado</li>
+          <li>Comunicación digital al colaborador, no por RH</li>
+          <li>Educación financiera incluida</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- YIELD MECHANICS -->
+<section id="calculadora" class="section section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Mecánica de rendimiento</span>
+      <h2>Sin letra chiquita.<br>Tu gente ve cómo se construye su ganancia.</h2>
+      <p class="lede">El rendimiento es <strong>variable</strong> y atado a CETES. Esta es la mecánica completa, paso por paso. La misma que comunicamos al ahorrador.</p>
+    </div>
+
+    <div class="yield-grid">
+      <div class="yield-mech">
+        <div class="ym-row">
+          <div class="ym-l">
+            <div class="ym-step">01</div>
+            <div class="ym-t">Rendimiento bruto Compass</div>
+            <div class="ym-s">Atado a CETES a 28 días</div>
+          </div>
+          <div class="ym-v">9.50%</div>
+        </div>
+        <div class="ym-row sub">
+          <div class="ym-l">
+            <div class="ym-step">02</div>
+            <div class="ym-t">Comisión Compass</div>
+            <div class="ym-s">Vehículo institucional</div>
+          </div>
+          <div class="ym-v">– 0.60%</div>
+        </div>
+        <div class="ym-row sub">
+          <div class="ym-l">
+            <div class="ym-step">03</div>
+            <div class="ym-t">Spread dabox</div>
+            <div class="ym-s">Operación, plataforma, soporte</div>
+          </div>
+          <div class="ym-v">– 0.75%</div>
+        </div>
+        <div class="ym-row total">
+          <div class="ym-l">
+            <div class="ym-t">Rendimiento al ahorrador</div>
+            <div class="ym-s">Variable, sujeto a CETES vigente</div>
+          </div>
+          <div class="ym-v hi">8.15%</div>
+        </div>
+        <div class="ym-foot">
+          Cifras ilustrativas con CETES a 28 días en 9.50%. <strong>El rendimiento no es garantizado</strong> y se ajusta con la tasa vigente.
+        </div>
+      </div>
+
+      <div class="yield-calc">
+        <span class="eyebrow">Calculadora ilustrativa</span>
+        <h3 class="calc-h">¿Cuánto ahorra un colaborador en 12 meses?</h3>
+
+        <div class="ctrl">
+          <div class="ctrl-top">
+            <span class="ctrl-label">Aportación quincenal</span>
+            <span class="ctrl-value">$ <span id="vMonthly">350</span></span>
+          </div>
+          <input type="range" id="monthly" min="100" max="1500" step="50" value="350">
+          <div class="ctrl-range"><span>$100</span><span>$1,500</span></div>
+        </div>
+
+        <div class="ctrl">
+          <div class="ctrl-top">
+            <span class="ctrl-label">Plazo</span>
+            <span class="ctrl-value"><span id="vYears">1</span> <span class="unit">año</span></span>
+          </div>
+          <input type="range" id="years" min="1" max="5" step="1" value="1">
+          <div class="ctrl-range"><span>1 año</span><span>5 años</span></div>
+        </div>
+
+        <div class="calc-out">
+          <div class="co-row">
+            <span>Aportado por el colaborador</span>
+            <strong id="bdPrincipal">$ 8,400</strong>
+          </div>
+          <div class="co-row hi">
+            <span>Rendimiento generado</span>
+            <strong id="bdYield">+ $ 365</strong>
+          </div>
+          <div class="co-row total">
+            <span>Saldo final estimado</span>
+            <strong id="calcResult">$ 8,765</strong>
+          </div>
+        </div>
+        <p class="calc-note">Cálculo ilustrativo con rendimiento neto al ahorrador de 8.15% anual capitalizado quincenalmente. Las cifras reales dependen de CETES vigente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR THE COMPANY -->
+<section id="empresa" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Para tu empresa</span>
+      <h2>Un beneficio que tu RH<br>no tiene que administrar.</h2>
+    </div>
+    <div class="feat-grid">
+      <div class="feat">
+        <div class="ft-num">01</div>
+        <h3>Carga cero para RH</h3>
+        <p>Layout único estandarizado. Tu RH lo aprueba una vez al mes. Las consultas las recibe el ahorrador en su portal, no tu equipo.</p>
+      </div>
+      <div class="feat">
+        <div class="ft-num">02</div>
+        <h3>Marco legal robusto</h3>
+        <p>Una Asociación Civil dedicada por empresa, con comité técnico, asamblea y opinión legal formal. Operación cubierta, riesgo controlado.</p>
+      </div>
+      <div class="feat">
+        <div class="ft-num">03</div>
+        <h3>Reportes mensuales</h3>
+        <p>Visibilidad completa: número de ahorradores activos, ahorro acumulado, rendimientos pagados, retiros programados. Todo auditable.</p>
+      </div>
+      <div class="feat">
+        <div class="ft-num">04</div>
+        <h3>Diferenciador de retención</h3>
+        <p>Las cajas de ahorro reducen rotación documentada en estudios de bienestar laboral. Súmalo al paquete de atracción y retención.</p>
+      </div>
+      <div class="feat">
+        <div class="ft-num">05</div>
+        <h3>Sin costo para colaboradores</h3>
+        <p>La empresa paga la suscripción. El colaborador solo aporta y gana. Cero comisiones de apertura, cero manejo de cuenta.</p>
+      </div>
+      <div class="feat">
+        <div class="ft-num">06</div>
+        <h3>Implementación 3–6 meses</h3>
+        <p>Desde firma hasta primer descuento por nómina. Onboarding consultivo, capacitación a RH, comunicación interna a tu equipo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Inversión empresarial</span>
+      <h2>Precio simple, escalonado por número de ahorradores.</h2>
+      <p class="lede">Un startup fee único cubre la constitución de la AC, contratos y onboarding. La suscripción mensual se ajusta al tamaño de tu plantilla.</p>
+    </div>
+
+    <div class="pricing-wrap">
+      <div class="startup-card">
+        <div class="sc-tag">Cobro único</div>
+        <h3>Startup fee</h3>
+        <div class="sc-price">$30,000<span class="sc-iva">+ IVA</span></div>
+        <ul class="sc-list">
+          <li>Constitución de Asociación Civil</li>
+          <li>Contratos empresa–dabox y AC–ahorrador</li>
+          <li>Opinión legal formal</li>
+          <li>Comité técnico y acta inicial</li>
+          <li>Onboarding consultivo de RH</li>
+          <li>Capacitación a tu equipo</li>
+        </ul>
+      </div>
+
+      <div class="tier-table">
+        <div class="tt-head">
+          <div>Suscripción mensual</div>
+          <div>Ahorradores activos</div>
+          <div>Costo / colaborador</div>
+        </div>
+        <div class="tt-row">
+          <div class="tt-price">$600</div>
+          <div>10 – 30</div>
+          <div class="tt-pp">$20</div>
+        </div>
+        <div class="tt-row">
+          <div class="tt-price">$900</div>
+          <div>31 – 60</div>
+          <div class="tt-pp">$15</div>
+        </div>
+        <div class="tt-row">
+          <div class="tt-price">$1,500</div>
+          <div>61 – 100</div>
+          <div class="tt-pp">$15</div>
+        </div>
+        <div class="tt-row">
+          <div class="tt-price">$3,000</div>
+          <div>101 – 250</div>
+          <div class="tt-pp">$12</div>
+        </div>
+        <div class="tt-row">
+          <div class="tt-price">$5,000</div>
+          <div>251 – 500</div>
+          <div class="tt-pp">$10</div>
+        </div>
+        <div class="tt-row">
+          <div class="tt-price">$8,500</div>
+          <div>501 – 1,000</div>
+          <div class="tt-pp">$8.50</div>
+        </div>
+        <div class="tt-row enterprise">
+          <div class="tt-price">$8,500 +</div>
+          <div>1,001+ <span class="tt-extra">$7 por adicional</span></div>
+          <div class="tt-pp">desde $7</div>
+        </div>
+        <div class="tt-foot">Todos los precios en pesos mexicanos + IVA. La tarifa se recalcula cada mes según ahorradores activos al cierre del mes anterior.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR THE COLLABORATOR -->
+<section id="colaborador" class="section dark">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Para tu gente</span>
+      <h2>Ahorrar sin pensarlo.<br>Mes con mes, sin complicaciones.</h2>
+    </div>
+    <div class="coll-grid">
+      <div class="coll-feat">
+        <div class="cf-i">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </div>
+        <h3>Descuento automático</h3>
+        <p>El colaborador define cuánto aportar. Su empresa lo descuenta y dabox lo hace crecer. El hábito ocurre solo.</p>
+      </div>
+      <div class="coll-feat">
+        <div class="cf-i">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+        <h3>Marco legal robusto</h3>
+        <p>Su ahorro vive en una Asociación Civil con comité técnico. El vehículo de inversión es Compass, institucional.</p>
+      </div>
+      <div class="coll-feat">
+        <div class="cf-i">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Retiros en julio y diciembre</h3>
+        <p>Dos ventanas anuales alineadas a aguinaldo y vacaciones. Disciplina financiera con momentos culturales claros.</p>
+      </div>
+      <div class="coll-feat">
+        <div class="cf-i">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 9h14M5 15h14"/></svg>
+        </div>
+        <h3>Acceso a préstamos</h3>
+        <p>Con +12 meses de antigüedad ahorrando, acceso a créditos conjuntos caja + aliados financieros, descontados por nómina.</p>
+      </div>
+      <div class="coll-feat">
+        <div class="cf-i">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 13h6M9 17h3"/></svg>
+        </div>
+        <h3>Educación financiera</h3>
+        <p>Tips, contenido y newsletters claras dentro del portal. Ahorro como primer paso, no como destino.</p>
+      </div>
+      <div class="coll-feat">
+        <div class="cf-i">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><circle cx="12" cy="18" r="1"/></svg>
+        </div>
+        <h3>Portal web responsive</h3>
+        <p>Saldo, rendimiento y aportaciones desde cualquier celular. Sin app que descargar, sin contraseñas que olvidar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Confianza</span>
+      <h2>Diseñado con sindicatos,<br>cámaras y empresas mexicanas.</h2>
+    </div>
+    <div class="logos-row">
+      <div class="logo-tile">CROM</div>
+      <div class="logo-tile">CANACINTRA</div>
+      <div class="logo-tile">COPARMEX</div>
+      <div class="logo-tile">AMECH</div>
+      <div class="logo-tile">SHRM<span class="lt-sub">México</span></div>
+    </div>
+    <div class="quotes-grid">
+      <div class="quote">
+        <p>"Profesionalizar nuestra caja interna era una deuda histórica. Con dabox la migración fue limpia: AC formal, comité técnico, rendimiento real. Mi tesorero ya no carga el riesgo."</p>
+        <div class="q-person">
+          <div class="q-avatar">CM</div>
+          <div>
+            <div class="q-name">Carlos Méndez</div>
+            <div class="q-meta">CFO · empresa manufacturera, Bajío</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <p>"Sumamos dabox al paquete de beneficios sin sumar carga a mi equipo. El layout llega prearmado, las consultas las recibe el ahorrador. Para RH es transparente."</p>
+        <div class="q-person">
+          <div class="q-avatar">MR</div>
+          <div>
+            <div class="q-name">María Rodríguez</div>
+            <div class="q-meta">Directora de RH · 180 colaboradores</div>
+          </div>
+        </div>
+      </div>
+      <div class="quote">
+        <p>"Por primera vez veo mi ahorro crecer cada mes sin hacer nada extra. Lo descuentan, lo invierten, y en julio puedo retirar. Simple."</p>
+        <div class="q-person">
+          <div class="q-avatar">JH</div>
+          <div>
+            <div class="q-name">Juan Hernández</div>
+            <div class="q-meta">Operario · ahorrador dabox</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section section-cream">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Respuestas claras, sin tecnicismos.</h2>
+    </div>
+    <div class="faq" id="faqList">
+      <div class="faq-item">
+        <button class="faq-q">¿Esto está regulado por la CNBV?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>dabox opera bajo figura de <strong>Asociación Civil con ahorro voluntario</strong>, validada con opinión legal formal. No es captación regulada CNBV porque no se promete tasa garantizada y porque cada AC es de los propios ahorradores. Compartimos el marco legal completo en la propuesta.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Y si dabox quiebra, qué pasa con el ahorro?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>El ahorro nunca está en dabox: vive en <strong>Compass</strong>, una plataforma institucional. dabox es el operador, no el custodio. Si dabox dejara de operar, los recursos siguen en Compass a nombre de la AC de tu empresa, con su comité técnico para definir el destino.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Por qué pagar suscripción si Compass cobra spread?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>El spread (0.75%) cubre la operación financiera. La suscripción cubre el servicio de plataforma, soporte a tu RH, comunicación al colaborador, comité técnico y mantenimiento. Son dos cosas distintas y se comunican por separado.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Por qué el retiro solo es en julio y diciembre?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Para que el ahorro sea ahorro de verdad y no caja chica. Coinciden con aguinaldo y vacaciones, los momentos que culturalmente la gente espera. Esto también permite mejores rendimientos porque Compass opera con horizonte estable.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿No tengo ancho de banda en RH para esto.<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>Es exactamente al revés: dabox quita carga a RH. El layout llega prearmado, el alta es digital, las consultas las recibe directamente el ahorrador en su portal. RH solo aprueba el layout una vez al mes.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">¿Cuánto tarda implementar dabox?<span class="plus" aria-hidden="true"></span></button>
+        <div class="faq-a"><p>De 3 a 6 meses desde primer contacto hasta el primer descuento por nómina. Incluye descubrimiento, diseño de condiciones con comité técnico, constitución de AC, firma de contratos y comunicación interna a colaboradores.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contacto" class="section">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <span class="eyebrow eyebrow-light">Siguiente paso</span>
+        <h2>Veinte minutos.<br>Caso aplicado a tu empresa.</h2>
+        <p>Una llamada de descubrimiento con el equipo dabox. Salimos con un plan concreto: número estimado de ahorradores, hook adecuado para tu organización y plazo de arranque.</p>
+        <div class="cta-cta">
+          <a href="#" class="btn btn-orange btn-lg">Agendar demo<span class="arr">→</span></a>
+          <a href="mailto:contacto@dabox.mx" class="btn btn-outline-light btn-lg">contacto@dabox.mx</a>
+        </div>
+      </div>
+      <div class="cta-side">
+        <div class="cs-row"><span>Pipeline activo</span><strong>CROM · Traktolamp · +30</strong></div>
+        <div class="cs-row"><span>Empresas piloto</span><strong>3 cerradas en 2026</strong></div>
+        <div class="cs-row"><span>Ticket de ahorro típico</span><strong>$300–$800 / mes</strong></div>
+        <div class="cs-row"><span>Empresa ICP</span><strong>20–250 colaboradores</strong></div>
+        <div class="cs-row"><span>Foco geográfico</span><strong>Bajío · SLP · CDMX</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo-complete-color.svg" alt="dabox" style="height:38px">
+        <p>Caja de ahorro digital para empresas mexicanas. Hacemos crecer el ahorro de tu gente.</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <h4>Producto</h4>
+          <a href="#producto">Cómo funciona</a>
+          <a href="#calculadora">Mecánica de rendimiento</a>
+          <a href="#empresa">Para tu empresa</a>
+          <a href="#colaborador">Para tu gente</a>
+        </div>
+        <div class="foot-col">
+          <h4>Compañía</h4>
+          <a href="#">Sobre dabox</a>
+          <a href="#">Marco legal</a>
+          <a href="#">Casos de éxito</a>
+          <a href="#">Contacto</a>
+        </div>
+        <div class="foot-col">
+          <h4>Recursos</h4>
+          <a href="#">Centro de ayuda</a>
+          <a href="#">Glosario</a>
+          <a href="#">Educación financiera</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 dabox · Hecho en México · contacto@dabox.mx</div>
+      <div class="legal">
+        Caja de ahorro voluntario operada bajo figura de Asociación Civil. Vehículo de inversión institucional Compass. Rendimiento variable atado a CETES — no garantizado.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Tweaks -->
+<div class="tweaks" id="tweaks">
+  <h4>Tweaks</h4>
+  <div class="tw-row">
+    <label>Acento</label>
+    <div class="swatches">
+      <button class="swatch active" data-accent="#FF5A00" style="background:#FF5A00"></button>
+      <button class="swatch" data-accent="#FF8125" style="background:#FF8125"></button>
+      <button class="swatch" data-accent="#283A7F" style="background:#283A7F"></button>
+    </div>
+  </div>
+  <div class="tw-row">
+    <label>Fondo</label>
+    <select id="tw-bg">
+      <option value="bone">Hueso</option>
+      <option value="white">Blanco</option>
+    </select>
+  </div>
+</div>
+
+<script>
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "accent": "#FF5A00",
+  "bg": "bone"
+}/*EDITMODE-END*/;
+
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 4));
+
+const fmt = (n, dec=0) => n.toLocaleString('en-US', {minimumFractionDigits:dec, maximumFractionDigits:dec});
+document.querySelectorAll('[data-count]').forEach(el => {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting || el.dataset.done) return;
+      el.dataset.done = "1";
+      const end = parseFloat(el.dataset.count);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const dec = (end % 1 !== 0) ? 2 : 0;
+      const start = performance.now();
+      const dur = 1200;
+      const tick = (t) => {
+        const p = Math.min(1, (t - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const cur = end * eased;
+        el.textContent = prefix + fmt(cur, dec) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+  }, {threshold:.4});
+  obs.observe(el);
+});
+
+let bal = 18420.15;
+setInterval(() => {
+  bal += Math.random() * 0.08 + 0.02;
+  const main = Math.floor(bal).toLocaleString('en-US');
+  const dec = (bal % 1).toFixed(2).slice(2);
+  document.getElementById('balanceNum').innerHTML = '$ ' + main + '.<small>' + dec + '</small>';
+}, 1800);
+
+/* Calculator */
+const fm = document.getElementById('monthly');
+const fy = document.getElementById('years');
+const updateCalc = () => {
+  const m = +fm.value;        // por quincena
+  const y = +fy.value;
+  const periods = y * 24;     // 24 quincenas
+  const rPer = 0.0815 / 24;
+  const fv = m * ((Math.pow(1 + rPer, periods) - 1) / rPer);
+  const principal = m * periods;
+  const yld = fv - principal;
+  document.getElementById('vMonthly').textContent = m.toLocaleString('en-US');
+  document.getElementById('vYears').textContent = y;
+  document.querySelector('#vYears + .unit').textContent = y === 1 ? 'año' : 'años';
+  document.getElementById('bdPrincipal').textContent = '$ ' + Math.round(principal).toLocaleString('en-US');
+  document.getElementById('bdYield').textContent = '+ $ ' + Math.round(yld).toLocaleString('en-US');
+  document.getElementById('calcResult').textContent = '$ ' + Math.round(fv).toLocaleString('en-US');
+  document.querySelector('.calc-h').textContent = `¿Cuánto ahorra un colaborador en ${y === 1 ? '12 meses' : y + ' años'}?`;
+};
+[fm, fy].forEach(el => el.addEventListener('input', updateCalc));
+updateCalc();
+
+document.querySelectorAll('.faq-item').forEach(item => {
+  item.querySelector('.faq-q').addEventListener('click', () => item.classList.toggle('open'));
+});
+document.querySelector('.faq-item').classList.add('open');
+
+/* Tweaks */
+const tweaksEl = document.getElementById('tweaks');
+let state = {...TWEAK_DEFAULTS};
+function applyTweaks(){
+  document.documentElement.style.setProperty('--orange', state.accent);
+  document.body.style.background = state.bg === 'white' ? '#FFFFFF' : '';
+  document.querySelectorAll('.swatch').forEach(s => s.classList.toggle('active', s.dataset.accent === state.accent));
+  document.getElementById('tw-bg').value = state.bg;
+}
+document.querySelectorAll('.swatch').forEach(s => s.addEventListener('click', () => {
+  state.accent = s.dataset.accent; applyTweaks();
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits:{accent:state.accent}}, '*');
+}));
+document.getElementById('tw-bg').addEventListener('change', e => {
+  state.bg = e.target.value; applyTweaks();
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits:{bg:state.bg}}, '*');
+});
+applyTweaks();
+
+window.addEventListener('message', (e) => {
+  if (!e.data || !e.data.type) return;
+  if (e.data.type === '__activate_edit_mode') tweaksEl.classList.add('show');
+  if (e.data.type === '__deactivate_edit_mode') tweaksEl.classList.remove('show');
+});
+window.parent.postMessage({type:'__edit_mode_available'}, '*');
+</script>
+</body>
+</html>

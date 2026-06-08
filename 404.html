@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Página no encontrada — dabox</title>
+<link rel="stylesheet" href="/styles.css">
+<link rel="icon" type="image/svg+xml" href="/assets/symbol-color.svg">
+<style>
+  /* Premium 404 Design */
+  body {
+    background-color: var(--blue-900);
+    color: white;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Fix logo contrast */
+  .brand-word {
+    color: white !important;
+  }
+  .nav {
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+    background: transparent;
+    position: relative;
+    z-index: 10;
+  }
+
+  /* Complex Mesh Gradient Background */
+  .mesh-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .mesh-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    animation: drift 15s infinite alternate ease-in-out;
+  }
+  .blob-1 {
+    top: -10%; left: -10%;
+    width: 50vw; height: 50vw;
+    background: radial-gradient(circle, var(--blue-700) 0%, rgba(17,34,64,0) 70%);
+  }
+  .blob-2 {
+    bottom: -20%; right: -10%;
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(255,90,0,0.15) 0%, rgba(255,90,0,0) 70%);
+    animation-delay: -5s;
+  }
+  .blob-3 {
+    top: 40%; left: 60%;
+    width: 40vw; height: 40vw;
+    background: radial-gradient(circle, var(--blue-600) 0%, rgba(17,34,64,0) 70%);
+    animation-delay: -10s;
+  }
+  
+  @keyframes drift {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(50px, -50px) scale(1.1); }
+  }
+
+  .error-page {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Glassmorphism Container */
+  .error-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: var(--radius-lg);
+    padding: 60px 40px;
+    max-width: 640px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Decorative Chart Line inside Card */
+  .deco-line {
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, transparent, var(--orange), transparent);
+    opacity: 0.5;
+  }
+
+  .error-code {
+    font-size: 140px;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, #FFF, rgba(255,255,255,0.7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0px;
+    letter-spacing: -0.05em;
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Highlight dot */
+  .error-code::after {
+    content: ".";
+    color: var(--orange);
+    -webkit-text-fill-color: var(--orange);
+  }
+
+  .error-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    color: white;
+    letter-spacing: -0.02em;
+  }
+  .error-msg {
+    font-size: 18px;
+    color: rgba(255,255,255,0.65);
+    max-width: 480px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+  }
+  
+  .error-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .error-actions .btn-primary {
+    box-shadow: 0 8px 24px rgba(255,90,0,0.3);
+  }
+  
+  @media (max-width: 768px) {
+    .error-card { padding: 40px 20px; }
+    .error-code { font-size: 100px; }
+    .error-title { font-size: 26px; }
+    .error-msg { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="mesh-bg">
+  <div class="mesh-blob blob-1"></div>
+  <div class="mesh-blob blob-2"></div>
+  <div class="mesh-blob blob-3"></div>
+</div>
+
+<nav class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/symbol-color.svg" alt="dabox">
+      <span class="brand-word">dabox</span>
+    </a>
+  </div>
+</nav>
+
+<div class="error-page">
+  <div class="error-card">
+    <div class="deco-line"></div>
+    <div class="error-code">404</div>
+    <h1 class="error-title">Ruta no encontrada</h1>
+    <p class="error-msg">Parece que el enlace que buscas se perdió en el mercado, pero no te preocupes, tus ahorros siguen creciendo seguros.</p>
+    <div class="error-actions">
+      <a href="/" class="btn btn-primary btn-lg">Volver al inicio</a>
+      <a href="/centro-de-ayuda" class="btn btn-outline-light btn-lg">Centro de ayuda</a>
+    </div>
+  </div>
+</div>
+
+<script src="/main.js"></script>
+</body>
+</html>

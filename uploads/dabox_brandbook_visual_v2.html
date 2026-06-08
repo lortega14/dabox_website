@@ -1,0 +1,2784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dabox — Extended Brandbook v2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange-action: #FF5A00;
+  --orange-warm: #FF8125;
+  --orange-200: #FFEFE0;
+  --orange-300: #FFD9C0;
+  --orange-400: #FFB783;
+  --orange-700: #CC4800;
+  --blue: #283A7F;
+  --blue-100: #E5E8F0;
+  --blue-200: #C0C7DC;
+  --blue-400: #8E9AC2;
+  --blue-500: #5C6CA8;
+  --blue-900: #1A2655;
+  --bone: #FAF9F5;
+  --text: #141413;
+  --gray-300: #E8E6DC;
+  --gray-500: #B0AEA5;
+  --success: #788C5D;
+  --danger: #C0392B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--bone);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============== LOGO SVG ============== */
+.logo-isotipo {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ============== COVER ============== */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 64px 64px;
+  background: var(--orange-action);
+  position: relative;
+  overflow: hidden;
+  color: var(--bone);
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 50%);
+}
+
+.cover > * { position: relative; z-index: 1; }
+
+.cover-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.cover-mid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.cover-isotipo {
+  width: 140px;
+  height: 140px;
+}
+
+.cover-wordmark {
+  font-size: 96px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+}
+
+.cover-tagline {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.cover-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cover-title-block {
+  max-width: 600px;
+}
+
+.cover-title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
+}
+
+.cover-subtitle {
+  font-size: 18px;
+  opacity: 0.85;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.cover-meta {
+  text-align: right;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  line-height: 1.8;
+}
+
+/* ============== TOC ============== */
+.toc {
+  background: var(--blue);
+  color: var(--bone);
+  padding: 96px 64px;
+}
+
+.toc-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.toc-label {
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--orange-warm);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.toc-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 64px;
+  letter-spacing: -1px;
+}
+
+.toc-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  text-decoration: none;
+  color: var(--bone);
+}
+
+.toc-item:nth-child(odd) { padding-right: 32px; }
+.toc-item:nth-child(even) { padding-left: 32px; }
+
+.toc-num {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--orange-warm);
+  min-width: 48px;
+}
+
+.toc-text {
+  font-size: 16px;
+  font-weight: 500;
+  flex: 1;
+}
+
+.toc-pages {
+  font-size: 12px;
+  opacity: 0.5;
+  font-weight: 500;
+}
+
+/* ============== SECTIONS ============== */
+.section {
+  padding: 96px 64px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.section-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--orange-700);
+  letter-spacing: 2px;
+  background: var(--orange-200);
+  padding: 6px 14px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-top: 64px;
+  margin-bottom: 16px;
+}
+
+h2.first { margin-top: 32px; }
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange-700);
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+
+.lead {
+  font-size: 22px;
+  line-height: 1.5;
+  color: var(--blue-500);
+  font-weight: 400;
+  max-width: 800px;
+  margin-bottom: 32px;
+}
+
+.divider {
+  height: 1px;
+  background: var(--gray-300);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.divider-thick {
+  height: 8px;
+  background: var(--orange-action);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============== ESSENCE ============== */
+.essence-quote {
+  background: var(--blue);
+  color: var(--bone);
+  padding: 56px 48px;
+  border-radius: 24px;
+  margin: 48px 0;
+  position: relative;
+}
+
+.essence-quote-mark {
+  position: absolute;
+  top: 16px;
+  left: 36px;
+  font-size: 100px;
+  color: var(--orange-warm);
+  font-weight: 900;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.essence-quote-text {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-left: 36px;
+  margin-top: 32px;
+  letter-spacing: -0.5px;
+}
+
+.essence-quote-text .highlight { color: var(--orange-warm); }
+
+.compare-table {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 0;
+  margin: 32px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300);
+}
+
+.compare-table-header {
+  background: var(--bone);
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue);
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.compare-table-cell {
+  padding: 18px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid var(--gray-300);
+  border-right: 1px solid var(--gray-300);
+  line-height: 1.4;
+}
+
+.compare-table-cell:last-child { border-right: none; }
+.compare-table-cell:nth-child(3n) { border-right: none; }
+
+.compare-yes {
+  background: var(--orange-200);
+  color: var(--orange-700);
+  font-weight: 500;
+}
+
+.compare-no {
+  color: var(--gray-500);
+  text-decoration: line-through;
+}
+
+/* ============== NO-WORDS ============== */
+.no-words {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.no-word-card {
+  background: var(--bone);
+  border: 2px dashed var(--danger);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.no-word-x {
+  font-size: 36px;
+  color: var(--danger);
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.no-word-label {
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+}
+
+.no-word-sub {
+  font-size: 13px;
+  color: var(--blue-500);
+  line-height: 1.4;
+}
+
+/* ============== REFERENCES ============== */
+.refs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.ref-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 20px;
+  padding: 36px;
+}
+
+.ref-card-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange-700);
+  margin-bottom: 12px;
+}
+
+.ref-card-brands {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 16px;
+  letter-spacing: -0.5px;
+}
+
+.ref-card-desc {
+  font-size: 14px;
+  color: var(--blue-500);
+  line-height: 1.6;
+}
+
+.synthesis-card {
+  background: var(--orange-action);
+  color: var(--bone);
+  border-radius: 24px;
+  padding: 56px 48px;
+  margin: 32px 0;
+  text-align: center;
+}
+
+.synthesis-card-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 20px;
+}
+
+.synthesis-card-text {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 800px;
+  margin: 0 auto;
+  letter-spacing: -0.5px;
+}
+
+/* ============== LOGO ANATOMY ============== */
+.logo-display {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 24px;
+  padding: 64px;
+  margin: 32px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.logo-display.dark {
+  background: var(--blue);
+}
+
+.logo-display.orange {
+  background: var(--orange-action);
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.logo-variant {
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--bone);
+}
+
+.logo-variant-display {
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.logo-variant-display.bone { background: var(--bone); }
+.logo-variant-display.dark { background: var(--blue); border-bottom-color: var(--blue-900); }
+.logo-variant-display.orange { background: var(--orange-action); border-bottom-color: var(--orange-700); }
+.logo-variant-display.cream { background: var(--orange-200); }
+
+.logo-variant-info {
+  padding: 16px 20px;
+}
+
+.logo-variant-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+.logo-variant-use {
+  font-size: 12px;
+  color: var(--blue-500);
+}
+
+.logo-rules {
+  background: var(--bone);
+  border-left: 4px solid var(--orange-action);
+  padding: 24px 32px;
+  margin: 24px 0;
+  border-radius: 0 12px 12px 0;
+}
+
+.logo-rules-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange-700);
+  margin-bottom: 12px;
+}
+
+.logo-rules ul {
+  list-style: none;
+  padding: 0;
+}
+
+.logo-rules li {
+  padding: 6px 0 6px 24px;
+  position: relative;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.logo-rules li::before {
+  content: "✕";
+  position: absolute;
+  left: 0;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.logo-rules.do li::before { content: "✓"; color: var(--success); }
+
+.clear-space {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 48px;
+  margin: 24px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.clear-space-visual {
+  width: 320px;
+  height: 200px;
+  border: 2px dashed var(--orange-action);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.clear-space-label {
+  position: absolute;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--orange-700);
+  background: var(--orange-200);
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.clear-space-label.top { top: -10px; left: 50%; transform: translateX(-50%); }
+.clear-space-label.right { right: -50px; top: 50%; transform: translateY(-50%); }
+
+.clear-space-caption {
+  font-size: 13px;
+  color: var(--blue-500);
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* ============== COLOR ============== */
+.color-system { margin: 48px 0; }
+
+.color-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.color-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.color-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300);
+  background: var(--bone);
+}
+
+.color-swatch {
+  height: 140px;
+  width: 100%;
+}
+
+.color-swatch-large { height: 220px; }
+
+.color-info { padding: 18px; }
+.color-name { font-size: 14px; font-weight: 700; color: var(--blue); margin-bottom: 4px; }
+.color-hex { font-size: 12px; color: var(--blue-500); font-family: 'Courier New', monospace; letter-spacing: 0.5px; }
+.color-role { font-size: 11px; color: var(--blue-500); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 4px; }
+
+.proportion-bar {
+  display: flex;
+  height: 96px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 32px 0 16px;
+  border: 1px solid var(--gray-300);
+}
+
+.prop-60 { background: var(--bone); flex: 60; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; color: var(--blue); border-right: 1px solid var(--gray-300); }
+.prop-30 { background: var(--blue); flex: 30; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; color: var(--bone); }
+.prop-10 { background: var(--orange-action); flex: 10; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 22px; color: var(--bone); }
+
+.prop-labels {
+  display: grid;
+  grid-template-columns: 6fr 3fr 1fr;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.prop-label { text-align: center; padding: 0 8px; }
+.prop-label strong { display: block; color: var(--blue); font-size: 13px; margin-top: 4px; text-transform: none; letter-spacing: 0; font-weight: 600; }
+
+.alert-orange {
+  background: var(--orange-200);
+  border-left: 4px solid var(--orange-action);
+  padding: 18px 24px;
+  border-radius: 0 8px 8px 0;
+  color: var(--orange-700);
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.combos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.combos-card {
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.combos-yes { background: var(--orange-200); border: 1px solid var(--orange-300); }
+.combos-no { background: var(--bone); border: 1px solid var(--gray-300); }
+
+.combos-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.combos-yes .combos-title { color: var(--orange-700); }
+.combos-no .combos-title { color: var(--danger); }
+
+.combos-list { list-style: none; padding: 0; }
+
+.combos-list li {
+  padding: 8px 0;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.combos-list li:last-child { border-bottom: none; }
+
+.combo-swatches {
+  display: inline-flex;
+  gap: 4px;
+}
+
+.combo-sw {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+/* ============== TYPOGRAPHY ============== */
+.type-stack { margin: 32px 0; border: 1px solid var(--gray-300); border-radius: 16px; overflow: hidden; background: var(--bone); }
+
+.type-row {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 32px;
+  padding: 28px 32px;
+  border-bottom: 1px solid var(--gray-300);
+  align-items: center;
+}
+
+.type-row:last-child { border-bottom: none; }
+
+.type-meta {
+  font-size: 12px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.type-meta strong {
+  display: block;
+  color: var(--blue);
+  font-size: 16px;
+  margin-bottom: 4px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 700;
+}
+
+.type-sample-hero { font-size: 64px; font-weight: 900; color: var(--blue); line-height: 1; letter-spacing: -2px; }
+.type-sample-h1 { font-size: 48px; font-weight: 800; color: var(--blue); line-height: 1.05; letter-spacing: -1px; }
+.type-sample-h2 { font-size: 32px; font-weight: 700; color: var(--blue); line-height: 1.15; }
+.type-sample-h3 { font-size: 22px; font-weight: 600; color: var(--blue); }
+.type-sample-body { font-size: 16px; font-weight: 400; color: var(--text); line-height: 1.6; }
+.type-sample-caption { font-size: 12px; font-weight: 300; color: var(--gray-500); }
+
+/* ============== VOICE ============== */
+.voice-attrs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.voice-attr {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 28px 16px;
+  text-align: center;
+}
+
+.voice-attr-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--orange-200);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--orange-700);
+}
+
+.voice-attr-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.voice-attr-desc {
+  font-size: 12px;
+  color: var(--blue-500);
+  line-height: 1.4;
+}
+
+.audience-table {
+  margin: 32px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300);
+}
+
+.audience-row {
+  display: grid;
+  grid-template-columns: 200px 200px 1fr;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.audience-row:last-child { border-bottom: none; }
+
+.audience-row.header {
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.audience-cell {
+  padding: 20px 24px;
+  font-size: 14px;
+  border-right: 1px solid var(--gray-300);
+  line-height: 1.5;
+}
+
+.audience-cell:last-child { border-right: none; }
+
+.audience-row:not(.header) .audience-cell:first-child {
+  font-weight: 700;
+  color: var(--blue);
+  background: var(--bone);
+}
+
+.audience-row .audience-cell:nth-child(2) {
+  color: var(--orange-700);
+  font-weight: 500;
+}
+
+.audience-row .audience-cell:nth-child(3) {
+  font-style: italic;
+  color: var(--text);
+}
+
+.dictionary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.dict-card { border-radius: 20px; padding: 32px; }
+.dict-yes { background: var(--orange-200); border: 1px solid var(--orange-300); }
+.dict-no { background: var(--bone); border: 1px solid var(--gray-300); }
+.dict-title { font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; }
+.dict-yes .dict-title { color: var(--orange-700); }
+.dict-no .dict-title { color: var(--danger); }
+.dict-words { display: flex; flex-wrap: wrap; gap: 8px; }
+.dict-word { background: var(--bone); border: 1px solid var(--gray-300); padding: 6px 14px; border-radius: 999px; font-size: 13px; color: var(--blue); font-weight: 500; }
+.dict-no .dict-word { text-decoration: line-through; color: var(--gray-500); }
+
+/* ============== HIERARCHY ============== */
+.hierarchy {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 20px;
+  padding: 48px;
+  margin: 32px 0;
+}
+
+.hierarchy-level {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 20px 0;
+  border-bottom: 1px dashed var(--gray-300);
+}
+
+.hierarchy-level:last-child { border-bottom: none; }
+
+.hierarchy-num {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--orange-700);
+  letter-spacing: 1px;
+  background: var(--orange-200);
+  padding: 6px 12px;
+  border-radius: 999px;
+  min-width: 80px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.hierarchy-content { flex: 1; }
+
+.hierarchy-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue-500);
+  margin-bottom: 6px;
+}
+
+.hierarchy-text {
+  font-size: 18px;
+  color: var(--blue);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.hierarchy-text.large { font-size: 24px; font-weight: 700; }
+
+/* ============== HEADLINES ============== */
+.headlines-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.headline-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 32px 28px;
+  position: relative;
+}
+
+.headline-card.recommended {
+  border: 2px solid var(--orange-action);
+  background: var(--orange-200);
+}
+
+.headline-letter {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headline-card.recommended .headline-letter { background: var(--orange-action); }
+
+.recommended-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--orange-action);
+  color: var(--bone);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.headline-tag {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue-500);
+  margin-bottom: 14px;
+}
+
+.headline-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ============== HERO MOCKUP ============== */
+.hero-mockup {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 24px;
+  padding: 48px;
+  margin: 48px 0;
+  position: relative;
+}
+
+.hero-mockup-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.hero-mockup-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.hero-mockup-headline {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.hero-mockup-sub {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-mockup-ctas { display: flex; gap: 12px; margin-bottom: 24px; }
+
+.btn-primary {
+  background: var(--orange-action);
+  color: var(--bone);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--blue);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border: 1.5px solid var(--blue);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.trust-strip {
+  font-size: 12px;
+  color: var(--blue-500);
+  font-weight: 500;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.trust-dot { color: var(--orange-action); }
+
+.hero-visual {
+  background: var(--orange-200);
+  border-radius: 20px;
+  padding: 32px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fake-portal {
+  background: var(--bone);
+  border-radius: 14px;
+  padding: 24px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(40,58,127,0.08);
+}
+
+.fake-portal-label { font-size: 11px; color: var(--blue-500); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+.fake-portal-amount { font-size: 36px; font-weight: 900; color: var(--orange-action); line-height: 1; margin-bottom: 16px; letter-spacing: -1px; }
+.fake-portal-bar { background: var(--gray-300); height: 6px; border-radius: 999px; overflow: hidden; margin-bottom: 12px; }
+.fake-portal-bar-fill { background: var(--orange-action); height: 100%; width: 68%; }
+.fake-portal-row { display: flex; justify-content: space-between; font-size: 12px; color: var(--blue-500); padding: 8px 0; border-bottom: 1px solid var(--gray-300); }
+.fake-portal-row:last-child { border-bottom: none; }
+.fake-portal-row strong { color: var(--blue); font-weight: 600; }
+
+/* ============== ANTI-PATTERNS ============== */
+.anti-table { margin: 32px 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--gray-300); }
+
+.anti-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--gray-300); }
+.anti-row:last-child { border-bottom: none; }
+
+.anti-cell { padding: 20px 24px; font-size: 14px; line-height: 1.5; }
+.anti-bad { background: var(--bone); color: var(--gray-500); border-right: 1px solid var(--gray-300); }
+.anti-bad::before { content: "✕"; display: inline-block; color: var(--danger); margin-right: 8px; font-weight: 700; }
+.anti-good { background: var(--orange-200); color: var(--blue); font-weight: 500; }
+.anti-good::before { content: "✓"; display: inline-block; color: var(--success); margin-right: 8px; font-weight: 700; }
+
+.anti-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.anti-header > div { padding: 16px 24px; }
+.anti-header > div:first-child { border-right: 1px solid var(--blue-900); }
+
+/* ============== COMPONENTS ============== */
+.components-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin: 32px 0; }
+
+.component-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.component-tag { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--blue-500); margin-bottom: 16px; }
+
+.component-demo { background: var(--blue-100); border-radius: 12px; padding: 28px; display: flex; align-items: center; justify-content: center; min-height: 110px; margin-bottom: 16px; }
+
+.component-code { background: var(--text); color: var(--orange-warm); font-family: 'Courier New', monospace; font-size: 12px; padding: 16px; border-radius: 8px; line-height: 1.7; overflow-x: auto; }
+
+.demo-input { background: var(--bone); border: 1.5px solid var(--gray-300); border-radius: 10px; padding: 12px 16px; font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--text); width: 100%; outline: none; }
+
+.demo-badge { background: var(--orange-200); color: var(--orange-700); font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px; }
+
+.demo-card { background: var(--bone); border: 1px solid var(--gray-300); border-radius: 16px; padding: 20px; width: 100%; text-align: center; }
+.demo-card-label { font-size: 11px; color: var(--blue-500); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; font-weight: 600; }
+.demo-card-value { font-size: 28px; font-weight: 800; color: var(--blue); }
+
+/* ============== APPLICATIONS ============== */
+.app-section { margin: 64px 0; }
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.app-title-num {
+  width: 40px;
+  height: 40px;
+  background: var(--orange-action);
+  color: var(--bone);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.app-title-text { font-size: 28px; font-weight: 700; color: var(--blue); letter-spacing: -0.5px; }
+
+/* ----- email mockup ----- */
+.email-mock {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 0;
+  margin: 24px 0;
+  overflow: hidden;
+  max-width: 680px;
+}
+
+.email-mock-header {
+  background: #F5F4EE;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--gray-300);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.email-mock-row { display: flex; gap: 12px; }
+.email-mock-label { color: var(--blue-500); font-weight: 600; min-width: 60px; }
+.email-mock-value { color: var(--text); }
+
+.email-mock-body { padding: 32px 28px; font-size: 14px; line-height: 1.6; color: var(--text); }
+.email-mock-body p { margin-bottom: 14px; max-width: none; }
+.email-mock-body strong { color: var(--blue); font-weight: 600; }
+
+.email-cta {
+  display: inline-block;
+  background: var(--orange-action);
+  color: var(--bone);
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 12px 0;
+}
+
+.email-mock-sig {
+  border-top: 1px solid var(--gray-300);
+  padding: 16px 28px;
+  font-size: 13px;
+  color: var(--blue-500);
+}
+
+.email-mock-sig strong { color: var(--blue); display: block; }
+
+/* ----- linkedin post ----- */
+.linkedin-mock {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 560px;
+  margin: 24px 0;
+}
+
+.linkedin-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.linkedin-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--orange-action);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bone);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.linkedin-author { font-size: 14px; font-weight: 600; color: var(--blue); }
+.linkedin-meta { font-size: 12px; color: var(--blue-500); }
+
+.linkedin-body { font-size: 14px; line-height: 1.6; color: var(--text); }
+.linkedin-body p { margin-bottom: 12px; }
+.linkedin-body .hashtags { color: var(--orange-700); font-weight: 500; }
+
+.linkedin-actions {
+  display: flex;
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--gray-300);
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--blue-500);
+}
+
+/* ----- portal mockup ----- */
+.portal-mock {
+  background: var(--blue-100);
+  border-radius: 24px;
+  padding: 32px;
+  margin: 24px 0;
+  position: relative;
+}
+
+.portal-screen {
+  background: var(--bone);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(40,58,127,0.12);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.portal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.portal-greeting { font-size: 14px; color: var(--blue-500); }
+.portal-greeting strong { color: var(--blue); }
+.portal-bell { width: 32px; height: 32px; background: var(--orange-200); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; color: var(--orange-700); }
+
+.portal-card-main {
+  background: var(--blue);
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--bone);
+  margin-bottom: 16px;
+}
+
+.portal-label { font-size: 11px; opacity: 0.7; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+.portal-amount { font-size: 32px; font-weight: 900; line-height: 1; letter-spacing: -1px; margin-bottom: 14px; }
+.portal-amount-sub { font-size: 12px; color: var(--orange-warm); font-weight: 600; }
+
+.portal-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.portal-stat {
+  background: var(--orange-200);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.portal-stat-label { font-size: 11px; color: var(--orange-700); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.portal-stat-value { font-size: 18px; font-weight: 800; color: var(--blue); }
+
+.portal-action {
+  background: var(--orange-action);
+  color: var(--bone);
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* ----- flyer ----- */
+.flyer-mock {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 24px;
+  margin: 24px 0;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 460px;
+}
+
+.flyer-left {
+  background: var(--blue);
+  color: var(--bone);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.flyer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.flyer-logo-mark { width: 36px; height: 36px; }
+
+.flyer-logo-text { font-size: 24px; font-weight: 800; }
+
+.flyer-title { font-size: 32px; font-weight: 800; line-height: 1.05; letter-spacing: -1px; margin-bottom: 16px; }
+
+.flyer-sub { font-size: 14px; opacity: 0.85; line-height: 1.5; margin-bottom: 24px; }
+
+.flyer-bullets { list-style: none; padding: 0; margin-top: auto; }
+
+.flyer-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 0;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.flyer-bullets li::before {
+  content: "●";
+  color: var(--orange-warm);
+  font-size: 8px;
+  margin-top: 6px;
+}
+
+.flyer-right { padding: 40px 32px; }
+
+.flyer-headline { font-size: 28px; font-weight: 800; color: var(--blue); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
+
+.flyer-text { font-size: 13px; color: var(--text); line-height: 1.6; margin-bottom: 16px; }
+
+.flyer-stat-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0 24px;
+}
+
+.flyer-stat {
+  background: var(--orange-200);
+  border-radius: 12px;
+  padding: 14px;
+  text-align: center;
+}
+
+.flyer-stat-value { font-size: 24px; font-weight: 900; color: var(--orange-action); line-height: 1; margin-bottom: 4px; }
+.flyer-stat-label { font-size: 10px; color: var(--orange-700); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.flyer-cta {
+  background: var(--orange-action);
+  color: var(--bone);
+  padding: 14px 20px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+.flyer-contact {
+  font-size: 11px;
+  color: var(--blue-500);
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+}
+
+/* ----- card / business card ----- */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.bcard {
+  border-radius: 12px;
+  padding: 24px;
+  aspect-ratio: 1.7;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.bcard-front {
+  background: var(--blue);
+  color: var(--bone);
+  justify-content: space-between;
+}
+
+.bcard-back {
+  background: var(--orange-action);
+  color: var(--bone);
+  align-items: center;
+  justify-content: center;
+}
+
+.bcard-name { font-size: 18px; font-weight: 700; }
+.bcard-role { font-size: 12px; opacity: 0.85; margin-bottom: 16px; }
+.bcard-info { font-size: 11px; opacity: 0.85; line-height: 1.6; }
+.bcard-logo-mark { width: 40px; height: 40px; align-self: flex-start; }
+.bcard-back .logo-isotipo { width: 80px; height: 80px; opacity: 0.95; }
+
+/* ----- social square ----- */
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.social-post {
+  aspect-ratio: 1;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-1 { background: var(--orange-action); color: var(--bone); }
+.social-2 { background: var(--bone); border: 1px solid var(--gray-300); color: var(--blue); }
+.social-3 { background: var(--blue); color: var(--bone); }
+
+.social-num {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.social-headline {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+}
+
+.social-headline .accent { color: var(--orange-warm); }
+.social-2 .social-headline .accent { color: var(--orange-action); }
+
+.social-tag { font-size: 11px; font-weight: 600; opacity: 0.85; }
+
+.social-isotipo-mini { width: 24px; height: 24px; }
+
+/* ----- microcopy patterns ----- */
+.microcopy-grid { margin: 24px 0; border: 1px solid var(--gray-300); border-radius: 16px; overflow: hidden; }
+
+.microcopy-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.microcopy-row:last-child { border-bottom: none; }
+
+.microcopy-label {
+  background: var(--bone);
+  padding: 16px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue);
+  border-right: 1px solid var(--gray-300);
+  display: flex;
+  align-items: center;
+}
+
+.microcopy-text {
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text);
+  font-style: italic;
+  display: flex;
+  align-items: center;
+}
+
+/* ============== CHECKLIST ============== */
+.checklist {
+  background: var(--blue);
+  color: var(--bone);
+  border-radius: 24px;
+  padding: 56px 48px;
+  margin: 48px 0;
+}
+
+.checklist-title { font-size: 32px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.5px; }
+.checklist-sub { color: var(--blue-200); margin-bottom: 32px; font-size: 15px; }
+
+.checklist-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+
+.checklist-col h4 {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--orange-warm);
+  margin: 0 0 12px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--blue-100);
+}
+
+.check-box {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--blue-200);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============== FOOTER ============== */
+.footer {
+  text-align: center;
+  padding: 64px 48px;
+  background: var(--bone);
+  border-top: 1px solid var(--gray-300);
+}
+
+.footer-logo { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.footer-isotipo { width: 36px; height: 36px; }
+.footer-wordmark { font-size: 24px; font-weight: 800; color: var(--blue); letter-spacing: -0.5px; }
+.footer-text { font-size: 13px; color: var(--blue-500); line-height: 1.7; }
+
+@media print {
+  .section { page-break-inside: avoid; }
+  .cover { page-break-after: always; }
+  body { background: white; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 48px 24px; }
+  .cover { padding: 40px 24px; }
+  .cover-wordmark { font-size: 64px; }
+  .cover-title { font-size: 40px; }
+  h1 { font-size: 36px; }
+  .toc-grid, .compare-table, .audience-row, .anti-row, .anti-header, .components-grid, .dictionary, .combos-grid, .refs-grid, .headlines-grid, .checklist-grid, .flyer-mock, .cards-grid, .hero-mockup-grid, .no-words { grid-template-columns: 1fr !important; }
+  .voice-attrs, .color-row { grid-template-columns: repeat(2, 1fr) !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============== SVG SYMBOLS (LOGO REUSABLE) ============== -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <!-- Isotipo dabox: hexágono naranja con cubo isométrico interno -->
+    <symbol id="dabox-isotipo" viewBox="0 0 100 100">
+      <!-- Hexágono outline naranja -->
+      <path d="M50 5 L88 27 L88 73 L50 95 L12 73 L12 27 Z" fill="none" stroke="#FF5A00" stroke-width="9" stroke-linejoin="round"/>
+      <!-- Cubo isométrico interno - cara superior izquierda -->
+      <path d="M50 30 L32 40 L32 56 L50 46 Z" fill="#FF8125"/>
+      <!-- Cubo isométrico interno - cara frontal derecha -->
+      <path d="M50 30 L68 40 L68 60 L50 70 L50 46 Z" fill="#FF5A00"/>
+      <!-- Detalle interno azul (ventana del cubo) -->
+      <rect x="55" y="48" width="8" height="14" fill="#283A7F"/>
+    </symbol>
+
+    <!-- Isotipo blanco para fondos oscuros -->
+    <symbol id="dabox-isotipo-white" viewBox="0 0 100 100">
+      <path d="M50 5 L88 27 L88 73 L50 95 L12 73 L12 27 Z" fill="none" stroke="#FAF9F5" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M50 30 L32 40 L32 56 L50 46 Z" fill="rgba(250,249,245,0.7)"/>
+      <path d="M50 30 L68 40 L68 60 L50 70 L50 46 Z" fill="#FAF9F5"/>
+      <rect x="55" y="48" width="8" height="14" fill="#FF5A00"/>
+    </symbol>
+
+    <!-- Isotipo azul (monocromo) -->
+    <symbol id="dabox-isotipo-blue" viewBox="0 0 100 100">
+      <path d="M50 5 L88 27 L88 73 L50 95 L12 73 L12 27 Z" fill="none" stroke="#283A7F" stroke-width="9" stroke-linejoin="round"/>
+      <path d="M50 30 L32 40 L32 56 L50 46 Z" fill="#5C6CA8"/>
+      <path d="M50 30 L68 40 L68 60 L50 70 L50 46 Z" fill="#283A7F"/>
+      <rect x="55" y="48" width="8" height="14" fill="#FAF9F5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============== COVER ============== -->
+<div class="cover">
+  <div class="cover-top">
+    <span>dabox · brand identity</span>
+    <span>v2.0 · April 2026</span>
+  </div>
+
+  <div class="cover-mid">
+    <svg class="cover-isotipo logo-isotipo"><use href="#dabox-isotipo-white"/></svg>
+    <div class="cover-wordmark">dabox</div>
+    <div class="cover-tagline">Extended Brandbook</div>
+  </div>
+
+  <div class="cover-bottom">
+    <div class="cover-title-block">
+      <div class="cover-title">Hacemos crecer<br>el ahorro de tu gente.</div>
+      <div class="cover-subtitle">La guía maestra para diseñar, escribir y aplicar la marca dabox en cada punto de contacto con clientes, ahorradores y aliados.</div>
+    </div>
+    <div class="cover-meta">
+      Confidencial<br>
+      Uso interno<br>
+      Documento vivo
+    </div>
+  </div>
+</div>
+
+<!-- ============== TOC ============== -->
+<div class="toc">
+  <div class="toc-inner">
+    <div class="toc-label">Índice</div>
+    <div class="toc-title">Lo que vas a encontrar</div>
+    <div class="toc-grid">
+      <a href="#essence" class="toc-item"><div class="toc-num">01</div><div class="toc-text">Esencia y posicionamiento</div></a>
+      <a href="#logo" class="toc-item"><div class="toc-num">02</div><div class="toc-text">Logo y reglas de uso</div></a>
+      <a href="#color" class="toc-item"><div class="toc-num">03</div><div class="toc-text">Sistema de color</div></a>
+      <a href="#typography" class="toc-item"><div class="toc-num">04</div><div class="toc-text">Tipografía</div></a>
+      <a href="#voice" class="toc-item"><div class="toc-num">05</div><div class="toc-text">Voz y tono por audiencia</div></a>
+      <a href="#hierarchy" class="toc-item"><div class="toc-num">06</div><div class="toc-text">Jerarquía narrativa</div></a>
+      <a href="#headlines" class="toc-item"><div class="toc-num">07</div><div class="toc-text">Headlines y mensajes</div></a>
+      <a href="#anti" class="toc-item"><div class="toc-num">08</div><div class="toc-text">Anti-patrones</div></a>
+      <a href="#components" class="toc-item"><div class="toc-num">09</div><div class="toc-text">Componentes UI</div></a>
+      <a href="#applications" class="toc-item"><div class="toc-num">10</div><div class="toc-text">Aplicaciones</div></a>
+      <a href="#microcopy" class="toc-item"><div class="toc-num">11</div><div class="toc-text">Microcopy del producto</div></a>
+      <a href="#checklist" class="toc-item"><div class="toc-num">12</div><div class="toc-text">Checklist de calidad</div></a>
+    </div>
+  </div>
+</div>
+
+<!-- ============== 01 ESSENCE ============== -->
+<div class="section" id="essence">
+  <div class="section-header">
+    <div class="section-num">01 · Esencia</div>
+  </div>
+  <h1>La marca, en una sola línea.</h1>
+  <p class="lead">Antes de hablar de colores y tipografía, hay que tener claro qué somos y qué no somos. Todo el resto del libro depende de esto.</p>
+
+  <div class="essence-quote">
+    <div class="essence-quote-mark">"</div>
+    <div class="essence-quote-text">dabox es la <span class="highlight">caja de ahorro digital</span> que las PyMEs mexicanas siempre debieron tener. Hacemos que el ahorro de los colaboradores sea simple para RH, transparente para finanzas, y motivador para quien ahorra.</div>
+  </div>
+
+  <h2>Personalidad de marca</h2>
+  <p class="lead">dabox es <strong>el aliado financiero que cree en la gente.</strong> No es un banco. No es una app fría. No es un coach motivacional inflado. Es la voz tranquila que dice: <em>"tu equipo puede tener salud financiera, y empieza por algo simple."</em></p>
+
+  <div class="compare-table">
+    <div class="compare-table-header">Eje</div>
+    <div class="compare-table-header">Somos</div>
+    <div class="compare-table-header">No somos</div>
+
+    <div class="compare-table-cell"><strong>Tono</strong></div>
+    <div class="compare-table-cell compare-yes">Cálido + profesional</div>
+    <div class="compare-table-cell compare-no">Acartonado, institucional viejo</div>
+
+    <div class="compare-table-cell"><strong>Energía</strong></div>
+    <div class="compare-table-cell compare-yes">Optimista, con propósito</div>
+    <div class="compare-table-cell compare-no">Eufórico, "¡¡lo lograrás!!"</div>
+
+    <div class="compare-table-cell"><strong>Confianza</strong></div>
+    <div class="compare-table-cell compare-yes">Transparente, con datos</div>
+    <div class="compare-table-cell compare-no">Vendedor de promesas</div>
+
+    <div class="compare-table-cell"><strong>Cercanía</strong></div>
+    <div class="compare-table-cell compare-yes">Tuteo, segunda persona</div>
+    <div class="compare-table-cell compare-no">Paternalista, "estimado cliente"</div>
+
+    <div class="compare-table-cell"><strong>Estética</strong></div>
+    <div class="compare-table-cell compare-yes">Minimalista premium con calidez</div>
+    <div class="compare-table-cell compare-no">Frío Silicon Valley o saturado fintech</div>
+  </div>
+
+  <h3>Las 3 palabras que dabox NO debe ser</h3>
+  <div class="no-words">
+    <div class="no-word-card">
+      <div class="no-word-x">×</div>
+      <div class="no-word-label">Aburrido</div>
+      <div class="no-word-sub">Somos institucionales,<br>no cementerios</div>
+    </div>
+    <div class="no-word-card">
+      <div class="no-word-x">×</div>
+      <div class="no-word-label">Bancario</div>
+      <div class="no-word-sub">Cero estética de<br>banco tradicional</div>
+    </div>
+    <div class="no-word-card">
+      <div class="no-word-x">×</div>
+      <div class="no-word-label">Complicado</div>
+      <div class="no-word-sub">Cero jerga,<br>cero pasos extra</div>
+    </div>
+  </div>
+
+  <h2>Norte estético</h2>
+  <p class="lead">Las marcas que admiramos y que dabox debe "oler" parecido:</p>
+
+  <div class="refs-grid">
+    <div class="ref-card">
+      <div class="ref-card-tag">Inspiración 01 — Calidez</div>
+      <div class="ref-card-brands">Nu · Klar · Revolut</div>
+      <div class="ref-card-desc">Calidez de color, hero con persona real, copy directo, sensación de "esto sí es para mí". Fintech humanizada, sin pose corporativa.</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-card-tag">Inspiración 02 — Disciplina</div>
+      <div class="ref-card-brands">Stripe · Linear</div>
+      <div class="ref-card-desc">Minimalismo premium, espacios generosos, tipografía como protagonista, gradientes sutiles, micro-interacciones precisas.</div>
+    </div>
+  </div>
+
+  <div class="synthesis-card">
+    <div class="synthesis-card-label">La síntesis dabox</div>
+    <div class="synthesis-card-text">"Si Stripe y Nu hicieran un producto financiero para RH de PyME mexicana, así se vería."</div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 02 LOGO ============== -->
+<div class="section" id="logo">
+  <div class="section-header">
+    <div class="section-num">02 · Logo</div>
+  </div>
+  <h1>Un hexágono que es una caja.<br>Un wordmark que es un saludo.</h1>
+  <p class="lead">El isotipo de dabox es un hexágono naranja con un cubo isométrico inscrito: la idea de "caja de ahorro" reinterpretada en geometría moderna. El wordmark es Poppins en azul institucional, en minúsculas — porque dabox tutea, no grita.</p>
+
+  <h2 class="first">Logo principal</h2>
+  <div class="logo-display">
+    <svg width="120" height="120" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+    <div style="font-size: 96px; font-weight: 800; color: var(--blue); letter-spacing: -3px; margin-left: 16px;">dabox</div>
+  </div>
+
+  <h2>Versiones aprobadas</h2>
+  <div class="logo-grid">
+    <div class="logo-variant">
+      <div class="logo-variant-display bone">
+        <svg width="80" height="80" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+        <div style="font-size: 56px; font-weight: 800; color: var(--blue); letter-spacing: -2px; margin-left: 12px;">dabox</div>
+      </div>
+      <div class="logo-variant-info">
+        <div class="logo-variant-name">Logo principal a color</div>
+        <div class="logo-variant-use">Para fondos blancos o muy claros</div>
+      </div>
+    </div>
+
+    <div class="logo-variant">
+      <div class="logo-variant-display dark">
+        <svg width="80" height="80" class="logo-isotipo"><use href="#dabox-isotipo-white"/></svg>
+        <div style="font-size: 56px; font-weight: 800; color: var(--bone); letter-spacing: -2px; margin-left: 12px;">dabox</div>
+      </div>
+      <div class="logo-variant-info">
+        <div class="logo-variant-name">Logo en blanco hueso</div>
+        <div class="logo-variant-use">Sobre azul dabox, naranja saturado o foto oscura</div>
+      </div>
+    </div>
+
+    <div class="logo-variant">
+      <div class="logo-variant-display orange">
+        <svg width="80" height="80" class="logo-isotipo"><use href="#dabox-isotipo-white"/></svg>
+        <div style="font-size: 56px; font-weight: 800; color: var(--bone); letter-spacing: -2px; margin-left: 12px;">dabox</div>
+      </div>
+      <div class="logo-variant-info">
+        <div class="logo-variant-name">Logo blanco sobre naranja</div>
+        <div class="logo-variant-use">Hero de cobertura, redes con fondo de marca</div>
+      </div>
+    </div>
+
+    <div class="logo-variant">
+      <div class="logo-variant-display cream">
+        <svg width="80" height="80" class="logo-isotipo"><use href="#dabox-isotipo-blue"/></svg>
+        <div style="font-size: 56px; font-weight: 800; color: var(--blue); letter-spacing: -2px; margin-left: 12px;">dabox</div>
+      </div>
+      <div class="logo-variant-info">
+        <div class="logo-variant-name">Logo monocromo azul</div>
+        <div class="logo-variant-use">Impresión limitada · fondos crema · contextos B/N</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>Solo isotipo (hexágono)</h2>
+  <p>Para favicons, avatars de redes y espacios cuadrados pequeños (≤ 64px). Nunca en lugar del logo completo cuando hay espacio.</p>
+  <div style="display: flex; gap: 24px; align-items: center; padding: 32px; background: var(--bone); border: 1px solid var(--gray-300); border-radius: 16px; margin: 24px 0; justify-content: center;">
+    <svg width="32" height="32" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+    <svg width="48" height="48" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+    <svg width="64" height="64" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+    <svg width="96" height="96" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+    <svg width="128" height="128" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+  </div>
+
+  <h2>Espacio de respeto</h2>
+  <p>El logo necesita aire. La distancia mínima de cualquier otro elemento es <strong>el ancho del isotipo</strong> a cada lado. Sin excepciones: no texto, no líneas, no bordes pegados.</p>
+
+  <div class="clear-space">
+    <div class="clear-space-visual">
+      <div class="clear-space-label top">x</div>
+      <div class="clear-space-label right">x</div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <svg width="48" height="48" class="logo-isotipo"><use href="#dabox-isotipo"/></svg>
+        <div style="font-size: 32px; font-weight: 800; color: var(--blue); letter-spacing: -1px;">dabox</div>
+      </div>
+    </div>
+    <div class="clear-space-caption">
+      <strong style="color: var(--blue);">x</strong> = ancho del isotipo. Mínimo del espacio libre alrededor del logo.
+    </div>
+  </div>
+
+  <h2>Reglas duras del logo</h2>
+
+  <div class="logo-rules do">
+    <div class="logo-rules-title">✓ Sí · Permitido</div>
+    <ul>
+      <li>Tamaño mínimo digital: 80px de ancho (logo completo) · 24px (solo isotipo)</li>
+      <li>Tamaño mínimo impreso: 20mm de ancho (logo completo)</li>
+      <li>Mantener proporción exacta entre isotipo y wordmark</li>
+      <li>Espacio de respeto = ancho del isotipo a cada lado</li>
+      <li>Solo las 4 versiones de color aprobadas (color, blanco, monocromo azul, sobre naranja)</li>
+    </ul>
+  </div>
+
+  <div class="logo-rules">
+    <div class="logo-rules-title">✕ No · Nunca</div>
+    <ul>
+      <li>Cambiar los colores del logo (ningún hex distinto a los oficiales)</li>
+      <li>Distorsionar proporciones (estirar, comprimir, sesgar)</li>
+      <li>Aplicar sombras, glow, outlines, biseles, brillos</li>
+      <li>Rotar el logo (excepto isotipo en aplicaciones puntuales aprobadas)</li>
+      <li>Colocarlo sobre fondos con poco contraste o fotografía saturada</li>
+      <li>Sustituir la fuente del wordmark por otra distinta a Poppins</li>
+      <li>Combinar el isotipo con un wordmark de otra marca en formato lockup</li>
+      <li>Pegarle texto descriptivo arriba o abajo (tipo "by Credian", "fintech", etc.)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 03 COLOR ============== -->
+<div class="section" id="color">
+  <div class="section-header">
+    <div class="section-num">03 · Color</div>
+  </div>
+  <h1>Tres colores oficiales.<br>Una proporción sagrada.</h1>
+  <p class="lead">El naranja domina los momentos de acción. El azul ancla la confianza. Los neutros respiran. Si rompes la proporción, rompes la marca.</p>
+
+  <h2 class="first">Colores primarios</h2>
+  <div class="color-row-3">
+    <div class="color-card">
+      <div class="color-swatch color-swatch-large" style="background: #FF5A00;"></div>
+      <div class="color-info">
+        <div class="color-role">Principal · Acción</div>
+        <div class="color-name">Naranja Acción</div>
+        <div class="color-hex">HEX #FF5A00<br>RGB 255, 90, 0<br>CMYK 0, 79, 100, 0</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch color-swatch-large" style="background: #FF8125;"></div>
+      <div class="color-info">
+        <div class="color-role">Secundario · Calidez</div>
+        <div class="color-name">Naranja Cálido</div>
+        <div class="color-hex">HEX #FF8125<br>RGB 255, 129, 37<br>CMYK 0, 61, 93, 0</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch color-swatch-large" style="background: #283A7F;"></div>
+      <div class="color-info">
+        <div class="color-role">Institucional · Ancla</div>
+        <div class="color-name" style="color: #283A7F;">Azul dabox</div>
+        <div class="color-hex">HEX #283A7F<br>RGB 40, 58, 127<br>CMYK 99, 90, 18, 5</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Paleta naranja extendida</h3>
+  <div class="color-row">
+    <div class="color-card"><div class="color-swatch" style="background: #FFEFE0;"></div><div class="color-info"><div class="color-name">Pastel</div><div class="color-hex">#FFEFE0</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #FFD9C0;"></div><div class="color-info"><div class="color-name">Suave</div><div class="color-hex">#FFD9C0</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #FFB783;"></div><div class="color-info"><div class="color-name">Crema</div><div class="color-hex">#FFB783</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #FF8125;"></div><div class="color-info"><div class="color-name">Cálido</div><div class="color-hex">#FF8125</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #CC4800;"></div><div class="color-info"><div class="color-name">Oscuro</div><div class="color-hex">#CC4800</div></div></div>
+  </div>
+
+  <h3>Paleta azul extendida</h3>
+  <div class="color-row">
+    <div class="color-card"><div class="color-swatch" style="background: #E5E8F0;"></div><div class="color-info"><div class="color-name">Niebla</div><div class="color-hex">#E5E8F0</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #C0C7DC;"></div><div class="color-info"><div class="color-name">Pastel</div><div class="color-hex">#C0C7DC</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #8E9AC2;"></div><div class="color-info"><div class="color-name">Suave</div><div class="color-hex">#8E9AC2</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #5C6CA8;"></div><div class="color-info"><div class="color-name">Medio</div><div class="color-hex">#5C6CA8</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #1A2655;"></div><div class="color-info"><div class="color-name">Oscuro</div><div class="color-hex">#1A2655</div></div></div>
+  </div>
+
+  <h3>Neutros y semánticos</h3>
+  <div class="color-row">
+    <div class="color-card"><div class="color-swatch" style="background: #FAF9F5;"></div><div class="color-info"><div class="color-name">Blanco hueso</div><div class="color-hex">#FAF9F5</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #E8E6DC;"></div><div class="color-info"><div class="color-name">Gris claro</div><div class="color-hex">#E8E6DC</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #141413;"></div><div class="color-info"><div class="color-name">Negro texto</div><div class="color-hex">#141413</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #788C5D;"></div><div class="color-info"><div class="color-name">Verde éxito</div><div class="color-hex">#788C5D</div></div></div>
+    <div class="color-card"><div class="color-swatch" style="background: #C0392B;"></div><div class="color-info"><div class="color-name">Rojo error</div><div class="color-hex">#C0392B</div></div></div>
+  </div>
+
+  <h2>Regla 60–30–10</h2>
+  <p>La proporción que evita que la marca se sienta saturada o fría. El naranja vibra solo si el resto respira.</p>
+
+  <div class="proportion-bar">
+    <div class="prop-60">60%</div>
+    <div class="prop-30">30%</div>
+    <div class="prop-10">10%</div>
+  </div>
+  <div class="prop-labels">
+    <div class="prop-label">Fondos · espacio · respiración<strong>Blanco hueso + Azul niebla</strong></div>
+    <div class="prop-label">Texto · headings · ancla<strong>Azul dabox</strong></div>
+    <div class="prop-label">CTAs · datos<strong>Naranja Acción</strong></div>
+  </div>
+
+  <div class="alert-orange">
+    🚨 Si una pieza tiene más de 25% de naranja, está saturada. Reducir y dejar respirar. El naranja es el grito; el azul es la voz.
+  </div>
+
+  <h2>Combinaciones de color</h2>
+
+  <div class="combos-grid">
+    <div class="combos-card combos-yes">
+      <div class="combos-title">✓ Combinaciones aprobadas</div>
+      <ul class="combos-list">
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #283A7F;"></span><span class="combo-sw" style="background: #FAF9F5;"></span></span> Azul dabox sobre blanco hueso</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FF5A00;"></span><span class="combo-sw" style="background: #FAF9F5;"></span></span> Naranja Acción sobre blanco hueso</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FAF9F5;"></span><span class="combo-sw" style="background: #FF5A00;"></span></span> Blanco hueso sobre Naranja</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #283A7F;"></span><span class="combo-sw" style="background: #FFB783;"></span></span> Azul dabox sobre Naranja Crema</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FF8125;"></span><span class="combo-sw" style="background: #283A7F;"></span></span> Naranja Cálido sobre Azul dabox</li>
+      </ul>
+    </div>
+
+    <div class="combos-card combos-no">
+      <div class="combos-title">✕ Combinaciones prohibidas</div>
+      <ul class="combos-list">
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FF5A00;"></span><span class="combo-sw" style="background: #283A7F;"></span></span> Naranja sobre Azul (vibración)</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FF8125;"></span><span class="combo-sw" style="background: #FFFFFF;"></span></span> Naranja Cálido sobre blanco</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FF5A00;"></span><span class="combo-sw" style="background: #283A7F;"></span><span class="combo-sw" style="background: #FF8125;"></span></span> 3 colores en una pieza</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: linear-gradient(90deg, #FF5A00, #283A7F);"></span></span> Gradiente azul → naranja</li>
+        <li><span class="combo-swatches"><span class="combo-sw" style="background: #FF5A00;"></span></span> Naranja en bloques grandes de body</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 04 TYPOGRAPHY ============== -->
+<div class="section" id="typography">
+  <div class="section-header">
+    <div class="section-num">04 · Tipografía</div>
+  </div>
+  <h1>Una sola familia.<br>Jerarquía por peso.</h1>
+  <p class="lead">Poppins en todos sus pesos. Si necesitas más voz, no añadas otra fuente: ajusta el tamaño y el peso. La disciplina tipográfica es lo que hace que dabox se lea premium. Arial es el único fallback técnico aprobado.</p>
+
+  <div class="type-stack">
+    <div class="type-row">
+      <div class="type-meta"><strong>Hero</strong>Black 900 · 48–64pt</div>
+      <div class="type-sample-hero">Hace crecer.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>H1</strong>ExtraBold 800 · 36–48pt</div>
+      <div class="type-sample-h1">Tu equipo merece ahorrar bien.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>H2</strong>Bold 700 · 24–32pt</div>
+      <div class="type-sample-h2">Cómo funciona en 3 pasos</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>H3</strong>SemiBold 600 · 18–22pt</div>
+      <div class="type-sample-h3">Descuento automático por nómina</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Body</strong>Regular 400 · 14–16pt</div>
+      <div class="type-sample-body">Implementa una caja de ahorro digital en menos de 30 días. Tu RH solo aprueba; nosotros operamos.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Caption</strong>Light 300 · 12–14pt</div>
+      <div class="type-sample-caption">Rendimiento atado a CETES, sujeto a variabilidad de mercado.</div>
+    </div>
+  </div>
+
+  <h2>Reglas de jerarquía</h2>
+  <div class="logo-rules do">
+    <div class="logo-rules-title">✓ Reglas obligatorias</div>
+    <ul>
+      <li>Un solo H1 por pieza (hero o título principal)</li>
+      <li>Saltos de tamaño claros: H1 ≥ 1.5x H2 ≥ 1.5x H3</li>
+      <li>Body mínimo 14pt en digital, mínimo 11pt en impreso</li>
+      <li>Interlineado body 1.4–1.6 (lectura cómoda)</li>
+      <li>Solo headlines y CTAs cortos centrados</li>
+      <li>Máximo 2 niveles de jerarquía por bloque</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 05 VOICE ============== -->
+<div class="section" id="voice">
+  <div class="section-header">
+    <div class="section-num">05 · Voz</div>
+  </div>
+  <h1>Cinco atributos. Cinco audiencias.<br>Una sola voz.</h1>
+  <p class="lead">El arquetipo es <strong>el aliado experto y cercano</strong> — no banco, no tech frío, no paternalista. Es el "buen socio financiero" que explica sin condescendencia. La voz no cambia entre canales; el tono sí.</p>
+
+  <h2 class="first">Atributos de voz (siempre presentes)</h2>
+  <div class="voice-attrs">
+    <div class="voice-attr"><div class="voice-attr-icon">C</div><div class="voice-attr-name">Cercano</div><div class="voice-attr-desc">Trato humano, sin fricción innecesaria</div></div>
+    <div class="voice-attr"><div class="voice-attr-icon">C</div><div class="voice-attr-name">Claro</div><div class="voice-attr-desc">Sin tecnicismos hablándole al usuario</div></div>
+    <div class="voice-attr"><div class="voice-attr-icon">C</div><div class="voice-attr-name">Confiable</div><div class="voice-attr-desc">Transparente, sin promesas vagas</div></div>
+    <div class="voice-attr"><div class="voice-attr-icon">O</div><div class="voice-attr-name">Optimista</div><div class="voice-attr-desc">Crecimiento, prosperidad, posibilidad</div></div>
+    <div class="voice-attr"><div class="voice-attr-icon">P</div><div class="voice-attr-name">Práctico</div><div class="voice-attr-desc">Útil, accionable, sin filosofar</div></div>
+  </div>
+
+  <h2>Tono según audiencia</h2>
+  <p>La voz no cambia, el tono sí. Misma persona, registros distintos.</p>
+
+  <div class="audience-table">
+    <div class="audience-row header">
+      <div class="audience-cell">Audiencia</div>
+      <div class="audience-cell">Tono</div>
+      <div class="audience-cell">Ejemplo</div>
+    </div>
+    <div class="audience-row">
+      <div class="audience-cell">Ahorrador (colaborador)</div>
+      <div class="audience-cell">Cálido, conversacional, motivacional</div>
+      <div class="audience-cell">"Listo, María. Tu primer ahorro ya está creciendo. 💪 Aquí lo puedes ver siempre que quieras."</div>
+    </div>
+    <div class="audience-row">
+      <div class="audience-cell">RH (María)</div>
+      <div class="audience-cell">Profesional cálido, empático con la carga</div>
+      <div class="audience-cell">"Sabemos que tu RH no necesita más cosas que administrar. Por eso dabox es básicamente plug-and-play."</div>
+    </div>
+    <div class="audience-row">
+      <div class="audience-cell">CFO / Director</div>
+      <div class="audience-cell">Profesional, claro, datos concretos</div>
+      <div class="audience-cell">"El modelo cubre tres frentes que hoy te exponen: trazabilidad fiscal, marco legal y rendimiento auditable."</div>
+    </div>
+    <div class="audience-row">
+      <div class="audience-cell">Sindicato</div>
+      <div class="audience-cell">Respetuoso, institucional, próximo</div>
+      <div class="audience-cell">"dabox respeta los acuerdos colectivos y suma una herramienta para que el ahorro de los compañeros tenga vehículo formal."</div>
+    </div>
+    <div class="audience-row">
+      <div class="audience-cell">Regulador / legal</div>
+      <div class="audience-cell">Formal, preciso, neutro</div>
+      <div class="audience-cell">"dabox SA de CV opera como administrador de cajas de ahorro empresariales bajo figura de Asociación Civil."</div>
+    </div>
+  </div>
+
+  <h2>Reglas duras de voz</h2>
+  <div class="logo-rules do">
+    <div class="logo-rules-title">✓ Hacer siempre</div>
+    <ul>
+      <li>Tuteo con el ahorrador y RH. Nunca "ud."</li>
+      <li>"Usted" solo en comunicaciones formales con representantes legales o autoridad</li>
+      <li>Frases cortas. Punto. Una idea por oración.</li>
+      <li>Verbos en primera persona plural ("te apoyamos", "estamos contigo", "lo resolvemos")</li>
+      <li>Emojis con cabeza: máximo 1 por mensaje al ahorrador, con propósito</li>
+    </ul>
+  </div>
+  <div class="logo-rules">
+    <div class="logo-rules-title">✕ Nunca</div>
+    <ul>
+      <li>Condescendencia, paternalismo, tono de "te lo explico porque no entiendes"</li>
+      <li>Jerga financiera innecesaria con el usuario final</li>
+      <li>Urgencia falsa ("¡última oportunidad!", "¡no esperes más!")</li>
+      <li>Exclamaciones múltiples (¡¡¡!!!) o MAYÚSCULAS para énfasis</li>
+      <li>Emojis con CFO, legal o autoridad</li>
+    </ul>
+  </div>
+
+  <h2>Diccionario de marca</h2>
+  <p>Las palabras que construyen marca y las que la destruyen.</p>
+
+  <div class="dictionary">
+    <div class="dict-card dict-yes">
+      <div class="dict-title">✓ Palabras señal · Úsalas con frecuencia</div>
+      <div class="dict-words">
+        <span class="dict-word">crecer</span><span class="dict-word">ahorrar</span><span class="dict-word">tu gente</span><span class="dict-word">tu equipo</span><span class="dict-word">bienestar</span><span class="dict-word">simple</span><span class="dict-word">claro</span><span class="dict-word">mes con mes</span><span class="dict-word">beneficio</span><span class="dict-word">sumar</span><span class="dict-word">acompañar</span><span class="dict-word">transparente</span><span class="dict-word">justo</span><span class="dict-word">sin complicaciones</span><span class="dict-word">sin costo</span><span class="dict-word">tu calma</span><span class="dict-word">listo</span><span class="dict-word">plug-and-play</span><span class="dict-word">tu paso</span>
+      </div>
+    </div>
+    <div class="dict-card dict-no">
+      <div class="dict-title">✕ Palabras prohibidas · Riesgo regulatorio + marca</div>
+      <div class="dict-words">
+        <span class="dict-word">inversión</span><span class="dict-word">captación</span><span class="dict-word">banco</span><span class="dict-word">banca</span><span class="dict-word">plazo forzoso</span><span class="dict-word">rendimiento garantizado</span><span class="dict-word">producto financiero</span><span class="dict-word">tasa fija</span><span class="dict-word">depósito</span><span class="dict-word">instrumento</span><span class="dict-word">innovador</span><span class="dict-word">líder</span><span class="dict-word">disruptivo</span><span class="dict-word">revolucionario</span><span class="dict-word">soluciones</span><span class="dict-word">de punta</span><span class="dict-word">cutting-edge</span><span class="dict-word">estimados clientes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 06 HIERARCHY ============== -->
+<div class="section" id="hierarchy">
+  <div class="section-header">
+    <div class="section-num">06 · Jerarquía narrativa</div>
+  </div>
+  <h1>Cinco niveles de mensaje.<br>Sin saltarse uno.</h1>
+  <p class="lead">dabox tiene una jerarquía narrativa: del tagline a la prueba dura, todo se construye en orden. Si vamos a hablar de "vehículo institucional" antes de tocar pilares, perdemos al lector.</p>
+
+  <div class="hierarchy">
+    <div class="hierarchy-level">
+      <div class="hierarchy-num">Nivel 1</div>
+      <div class="hierarchy-content">
+        <div class="hierarchy-label">Tagline · siempre presente</div>
+        <div class="hierarchy-text large">"Hacemos crecer el ahorro de tu gente."</div>
+      </div>
+    </div>
+    <div class="hierarchy-level">
+      <div class="hierarchy-num">Nivel 2</div>
+      <div class="hierarchy-content">
+        <div class="hierarchy-label">Promesa central · hero, headline, primer slide</div>
+        <div class="hierarchy-text">Bienestar financiero integral: ahorro + préstamos + educación.</div>
+      </div>
+    </div>
+    <div class="hierarchy-level">
+      <div class="hierarchy-num">Nivel 3</div>
+      <div class="hierarchy-content">
+        <div class="hierarchy-label">Pilares de valor · propuestas, decks, landings</div>
+        <div class="hierarchy-text">
+          1. Descuento automático vía nómina (fricción cero)<br>
+          2. Préstamos respaldados por el ahorro<br>
+          3. Educación financiera integrada<br>
+          4. Beneficio sin costo para el colaborador
+        </div>
+      </div>
+    </div>
+    <div class="hierarchy-level">
+      <div class="hierarchy-num">Nivel 4</div>
+      <div class="hierarchy-content">
+        <div class="hierarchy-label">Pruebas · propuestas avanzadas, casos de éxito</div>
+        <div class="hierarchy-text">
+          Vehículo institucional Compass · Marco legal AC + comité técnico · Rendimiento atado a CETES auditable · Operación digital sin papeles
+        </div>
+      </div>
+    </div>
+    <div class="hierarchy-level">
+      <div class="hierarchy-num">Nivel 5</div>
+      <div class="hierarchy-content">
+        <div class="hierarchy-label">Llamada a la acción · cierre de cualquier pieza</div>
+        <div class="hierarchy-text">"Conoce dabox" · "Agenda 20 minutos" · "Solicita tu propuesta"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert-orange">
+    Una pieza nunca rompe esta jerarquía. Si vas a saltar al Nivel 4 sin pasar por Nivel 3, perdiste al lector.
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 07 HEADLINES ============== -->
+<div class="section" id="headlines">
+  <div class="section-header">
+    <div class="section-num">07 · Headlines</div>
+  </div>
+  <h1>Cinco opciones para el hero.</h1>
+  <p class="lead">Todas siguen la misma fórmula: <strong>beneficio concreto + tu gente + sin complicaciones.</strong> Una está marcada como recomendada para web RH/PyME.</p>
+
+  <div class="headlines-grid">
+    <div class="headline-card">
+      <div class="headline-letter">A</div>
+      <div class="headline-tag">Directa, foco RH</div>
+      <div class="headline-text">Caja de ahorro digital para tu equipo. Sin papeles. Sin caja chica. Sin dolores de cabeza.</div>
+    </div>
+
+    <div class="headline-card">
+      <div class="headline-letter">B</div>
+      <div class="headline-tag">Bienestar primero</div>
+      <div class="headline-text">Ahorrar bien es un beneficio. Hacerlo simple, también.</div>
+    </div>
+
+    <div class="headline-card">
+      <div class="headline-letter">C</div>
+      <div class="headline-tag">Confianza + crecimiento</div>
+      <div class="headline-text">El ahorro de tu gente, creciendo cada mes.</div>
+    </div>
+
+    <div class="headline-card">
+      <div class="headline-letter">D</div>
+      <div class="headline-tag">Anti-banco</div>
+      <div class="headline-text">Cajas de ahorro como deberían ser: digitales, transparentes y sin letra chiquita.</div>
+    </div>
+
+    <div class="headline-card recommended" style="grid-column: span 2;">
+      <div class="recommended-badge">Recomendada</div>
+      <div class="headline-letter">E</div>
+      <div class="headline-tag">Foco operación liviana · Ideal para web RH/PyME</div>
+      <div class="headline-text" style="font-size: 28px;">Un beneficio real para tu equipo. Cero carga operativa para ti.</div>
+    </div>
+  </div>
+
+  <h2>Mockup del hero recomendado</h2>
+  <p>Así debería verse aplicado. Compara contra tu web actual y verás dónde están las diferencias.</p>
+
+  <div class="hero-mockup">
+    <div class="hero-mockup-tag">Vista preview · Hero ideal</div>
+    <div class="hero-mockup-grid">
+      <div>
+        <div class="hero-mockup-headline">Un beneficio real para tu equipo. <span style="color: var(--orange-action);">Cero carga operativa</span> para ti.</div>
+        <div class="hero-mockup-sub">Implementa una caja de ahorro digital en menos de 30 días. Descuento por nómina, rendimiento atado a CETES y portal del colaborador. Tu RH solo aprueba; nosotros operamos.</div>
+        <div class="hero-mockup-ctas">
+          <button class="btn-primary">Agenda 20 minutos</button>
+          <button class="btn-secondary">Cómo funciona</button>
+        </div>
+        <div class="trust-strip">
+          <span><span class="trust-dot">●</span> Vehículo institucional</span>
+          <span><span class="trust-dot">●</span> Marco legal AC + comité</span>
+          <span><span class="trust-dot">●</span> Rendimiento atado a CETES</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="fake-portal">
+          <div class="fake-portal-label">Tu ahorro</div>
+          <div class="fake-portal-amount">$12,480</div>
+          <div class="fake-portal-bar"><div class="fake-portal-bar-fill"></div></div>
+          <div class="fake-portal-row"><span>Aportación mensual</span><strong>$600</strong></div>
+          <div class="fake-portal-row"><span>Rendimiento</span><strong style="color: var(--orange-action);">+CETES</strong></div>
+          <div class="fake-portal-row"><span>Próximo retiro</span><strong>Diciembre</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 08 ANTI-PATTERNS ============== -->
+<div class="section" id="anti">
+  <div class="section-header">
+    <div class="section-num">08 · Anti-patrones</div>
+  </div>
+  <h1>Lo que hace que tu web<br>se vea genérica.</h1>
+  <p class="lead">A la izquierda, lo que está haciendo cualquier web genérica de fintech latinoamericana. A la derecha, la versión dabox.</p>
+
+  <div class="anti-table">
+    <div class="anti-header">
+      <div>Genérico</div>
+      <div>dabox</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Stock photo de gente con manos juntas o apretón de manos</div>
+      <div class="anti-cell anti-good">Mockup limpio del portal en laptop/móvil sobre fondo crema</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Hero centrado con gradiente azul → naranja saturado</div>
+      <div class="anti-cell anti-good">Hero asimétrico: texto izq, mockup der, sobre blanco hueso</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">"Únete a la revolución del ahorro"</div>
+      <div class="anti-cell anti-good">"Tu gente merece un beneficio que se note"</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Iconos planos coloridos genéricos (Flaticon-style)</div>
+      <div class="anti-cell anti-good">Iconos lineales monocromáticos en azul dabox, peso 1.5pt</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">"¡!" múltiples y MAYÚSCULAS para énfasis</div>
+      <div class="anti-cell anti-good">Punto y aparte. Bold para énfasis. Copy descansado</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">CTAs genéricos: "Conoce más" / "Click aquí"</div>
+      <div class="anti-cell anti-good">CTAs con verbo: "Agenda 20 minutos" / "Cómo funciona"</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Cards con sombras pesadas (box-shadow grandes)</div>
+      <div class="anti-cell anti-good">Borde sutil #E8E6DC + sombra mínima 0 1px 3px rgba(0,0,0,.04)</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Body text sobre blanco puro #FFFFFF</div>
+      <div class="anti-cell anti-good">Body text sobre #FAF9F5 (calidez sutil estilo Stripe)</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Centrar todos los párrafos</div>
+      <div class="anti-cell anti-good">Solo headline y CTA centrados; párrafos a la izquierda</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">"Productos financieros innovadores que revolucionan la banca"</div>
+      <div class="anti-cell anti-good">"Caja digital que crece mes con mes con rendimiento atado a CETES"</div>
+    </div>
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Cerditos alcancía / monedas flotando / billetes</div>
+      <div class="anti-cell anti-good">Mockups del portal real, dispositivos, datos sutiles</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 09 COMPONENTS ============== -->
+<div class="section" id="components">
+  <div class="section-header">
+    <div class="section-num">09 · Componentes</div>
+  </div>
+  <h1>Bloques base de UI.</h1>
+  <p class="lead">Los componentes que construyen la web y el producto. Specs listas para copiar al code.</p>
+
+  <div class="components-grid">
+    <div class="component-card">
+      <div class="component-tag">Botón primario</div>
+      <div class="component-demo"><button class="btn-primary">Agenda 20 minutos</button></div>
+      <div class="component-code">background: #FF5A00<br>color: #FAF9F5<br>padding: 14px 28px<br>radius: 12px<br>weight: SemiBold 600</div>
+    </div>
+
+    <div class="component-card">
+      <div class="component-tag">Botón secundario</div>
+      <div class="component-demo"><button class="btn-secondary">Cómo funciona</button></div>
+      <div class="component-code">background: transparent<br>color: #283A7F<br>border: 1.5px solid #283A7F<br>radius: 12px</div>
+    </div>
+
+    <div class="component-card">
+      <div class="component-tag">Input de formulario</div>
+      <div class="component-demo"><input type="text" class="demo-input" placeholder="contacto@empresa.mx"></div>
+      <div class="component-code">border: 1.5px solid #E8E6DC<br>radius: 10px<br>focus: border #FF5A00<br>outline: 3px rgba(255,90,0,0.15)</div>
+    </div>
+
+    <div class="component-card">
+      <div class="component-tag">Badge / Chip</div>
+      <div class="component-demo"><span class="demo-badge">+CETES</span></div>
+      <div class="component-code">background: #FFEFE0<br>color: #CC4800<br>padding: 6px 12px<br>radius: 999px (pill)</div>
+    </div>
+
+    <div class="component-card" style="grid-column: span 2;">
+      <div class="component-tag">Stat cards · Datos clave</div>
+      <div class="component-demo" style="display: flex; gap: 16px;">
+        <div class="demo-card"><div class="demo-card-label">Implementación</div><div class="demo-card-value" style="color: var(--orange-action);">30 días</div></div>
+        <div class="demo-card"><div class="demo-card-label">Cuota máxima</div><div class="demo-card-value" style="color: var(--orange-action);">&lt;30%</div></div>
+        <div class="demo-card"><div class="demo-card-label">Rendimiento</div><div class="demo-card-value" style="color: var(--orange-action);">+CETES</div></div>
+      </div>
+      <div class="component-code">Valor: Naranja Acción Black 900 28pt · Label: Azul medio Medium 11pt uppercase · Card: bg #FAF9F5, borde #E8E6DC, radius 16px, padding 20px</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 10 APPLICATIONS ============== -->
+<div class="section" id="applications">
+  <div class="section-header">
+    <div class="section-num">10 · Aplicaciones</div>
+  </div>
+  <h1>La marca, en cada punto<br>de contacto.</h1>
+  <p class="lead">Mockups reales de cómo se ve dabox aplicada en los canales que importan: email, LinkedIn, portal del ahorrador, flyers, redes sociales y tarjetas de presentación.</p>
+
+  <!-- ---------- Email ---------- -->
+  <div class="app-section">
+    <div class="app-title">
+      <div class="app-title-num">01</div>
+      <div class="app-title-text">Email comercial · CFO/RH</div>
+    </div>
+
+    <div class="email-mock">
+      <div class="email-mock-header">
+        <div class="email-mock-row"><div class="email-mock-label">Para:</div><div class="email-mock-value">maria.lopez@manufacturasx.mx</div></div>
+        <div class="email-mock-row"><div class="email-mock-label">De:</div><div class="email-mock-value">musa@dabox.mx</div></div>
+        <div class="email-mock-row"><div class="email-mock-label">Asunto:</div><div class="email-mock-value"><strong>Caja de ahorro para tu equipo, sin cargarte más a ti</strong></div></div>
+      </div>
+      <div class="email-mock-body">
+        <p>Hola María,</p>
+        <p>Vi que en Manufacturas X tienen una caja de ahorro tradicional. <strong>Sé que mantenerla manualmente no es divertido</strong> — Excel, conciliaciones, retiros, todo cae en RH.</p>
+        <p>dabox la digitaliza completa: descuento automático por nómina, portal del colaborador y reporte mensual a la empresa. <strong>Tú solo apruebas; nosotros operamos.</strong></p>
+        <p>¿Te late agendar 20 minutos esta o la próxima semana? Te muestro cómo se vería en concreto para tu equipo.</p>
+        <a href="#" class="email-cta">Agenda 20 minutos →</a>
+      </div>
+      <div class="email-mock-sig">
+        <strong>Musa · Founder, dabox</strong>
+        dabox.mx · +52 444 962 5037
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- LinkedIn ---------- -->
+  <div class="app-section">
+    <div class="app-title">
+      <div class="app-title-num">02</div>
+      <div class="app-title-text">Post de LinkedIn · Voz Musa</div>
+    </div>
+
+    <div class="linkedin-mock">
+      <div class="linkedin-header">
+        <div class="linkedin-avatar">M</div>
+        <div>
+          <div class="linkedin-author">Musa · Founder de dabox</div>
+          <div class="linkedin-meta">2 días · 🌎</div>
+        </div>
+      </div>
+      <div class="linkedin-body">
+        <p><strong>El 73% de los colaboradores de PyMEs mexicanas no logra ahorrar consistentemente.</strong></p>
+        <p>No es porque no quieran. Es porque las cajas de ahorro tradicionales no fueron hechas para 2026: Excel, recibos a mano, retiros que tardan semanas.</p>
+        <p>En dabox vimos un patrón claro: las empresas que digitalizan su caja de ahorro ven 2x retención de personal en operación. ¿Casualidad? Probablemente no.</p>
+        <p>Si tu equipo tiene caja de ahorro y RH la administra a mano, vale la pena platicarlo. <span class="hashtags">#SaludFinanciera #PyMEMexico #BeneficiosLaborales</span></p>
+      </div>
+      <div class="linkedin-actions">
+        <span>👍 142 reacciones</span>
+        <span>💬 18 comentarios</span>
+        <span>↻ 9 reposts</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Portal del ahorrador ---------- -->
+  <div class="app-section">
+    <div class="app-title">
+      <div class="app-title-num">03</div>
+      <div class="app-title-text">Portal del ahorrador · Mobile</div>
+    </div>
+
+    <div class="portal-mock">
+      <div class="portal-screen">
+        <div class="portal-top">
+          <div class="portal-greeting">Hola, <strong>María</strong> 👋</div>
+          <div class="portal-bell">●</div>
+        </div>
+        <div class="portal-card-main">
+          <div class="portal-label">Tu ahorro</div>
+          <div class="portal-amount">$12,480.50</div>
+          <div class="portal-amount-sub">+$248 este mes ↑</div>
+        </div>
+        <div class="portal-stats">
+          <div class="portal-stat">
+            <div class="portal-stat-label">Rendimiento</div>
+            <div class="portal-stat-value">+CETES</div>
+          </div>
+          <div class="portal-stat">
+            <div class="portal-stat-label">Próximo retiro</div>
+            <div class="portal-stat-value">Dic 2026</div>
+          </div>
+        </div>
+        <button class="portal-action">Ver mi historial</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Flyer ---------- -->
+  <div class="app-section">
+    <div class="app-title">
+      <div class="app-title-num">04</div>
+      <div class="app-title-text">Flyer one-pager · Empresa</div>
+    </div>
+
+    <div class="flyer-mock">
+      <div class="flyer-left">
+        <div class="flyer-logo">
+          <svg width="36" height="36" class="logo-isotipo flyer-logo-mark"><use href="#dabox-isotipo-white"/></svg>
+          <div class="flyer-logo-text">dabox</div>
+        </div>
+        <div class="flyer-title">Caja de ahorro digital, sin carga operativa.</div>
+        <div class="flyer-sub">Descuento por nómina, rendimiento atado a CETES, portal del colaborador. Tu RH solo aprueba; nosotros operamos.</div>
+        <ul class="flyer-bullets">
+          <li>Implementación en 30 días</li>
+          <li>Cero costo para el colaborador</li>
+          <li>Marco legal AC + comité técnico</li>
+          <li>Operación 100% digital</li>
+        </ul>
+      </div>
+      <div class="flyer-right">
+        <div class="flyer-headline">Para PyMEs que quieren beneficios reales.</div>
+        <div class="flyer-text">Diseñado para empresas de 20–250 colaboradores. Compatible con tu nómina actual (manual o software). Comité técnico que respeta tus reglas internas.</div>
+        <div class="flyer-stat-strip">
+          <div class="flyer-stat">
+            <div class="flyer-stat-value">30d</div>
+            <div class="flyer-stat-label">Implementación</div>
+          </div>
+          <div class="flyer-stat">
+            <div class="flyer-stat-value">+CETES</div>
+            <div class="flyer-stat-label">Rendimiento</div>
+          </div>
+        </div>
+        <div class="flyer-cta">Agenda 20 minutos →</div>
+        <div class="flyer-contact">
+          <span>dabox.mx</span>
+          <span>contacto@dabox.mx</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Redes ---------- -->
+  <div class="app-section">
+    <div class="app-title">
+      <div class="app-title-num">05</div>
+      <div class="app-title-text">Posts cuadrados · Instagram / LinkedIn</div>
+    </div>
+
+    <div class="social-grid">
+      <div class="social-post social-1">
+        <div>
+          <svg width="24" height="24" class="logo-isotipo social-isotipo-mini"><use href="#dabox-isotipo-white"/></svg>
+        </div>
+        <div class="social-headline">Tu equipo merece <span class="accent">ahorrar bien.</span></div>
+        <div class="social-tag">#SaludFinanciera</div>
+      </div>
+
+      <div class="social-post social-2">
+        <div class="social-num">DATO 01</div>
+        <div class="social-headline">El <span class="accent">73%</span> no ahorra consistentemente.</div>
+        <div class="social-tag">dabox.mx</div>
+      </div>
+
+      <div class="social-post social-3">
+        <div>
+          <svg width="24" height="24" class="logo-isotipo social-isotipo-mini"><use href="#dabox-isotipo-white"/></svg>
+        </div>
+        <div class="social-headline">Caja digital. <span class="accent">Cero papeles.</span></div>
+        <div class="social-tag">Agenda 20 min →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ---------- Business cards ---------- -->
+  <div class="app-section">
+    <div class="app-title">
+      <div class="app-title-num">06</div>
+      <div class="app-title-text">Tarjeta de presentación</div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="bcard bcard-front">
+        <svg width="40" height="40" class="logo-isotipo bcard-logo-mark"><use href="#dabox-isotipo-white"/></svg>
+        <div>
+          <div class="bcard-name">Musa Yagüe</div>
+          <div class="bcard-role">Founder · dabox</div>
+          <div class="bcard-info">
+            musa@dabox.mx<br>
+            +52 444 962 5037<br>
+            dabox.mx
+          </div>
+        </div>
+      </div>
+
+      <div class="bcard bcard-back">
+        <svg width="80" height="80" class="logo-isotipo"><use href="#dabox-isotipo-white"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 11 MICROCOPY ============== -->
+<div class="section" id="microcopy">
+  <div class="section-header">
+    <div class="section-num">11 · Microcopy</div>
+  </div>
+  <h1>El producto habla.<br>Y lo hace en dabox.</h1>
+  <p class="lead">Los textos pequeños del producto (botones, errores, estados vacíos, confirmaciones) son donde la marca cobra vida en el día a día. Aquí los patrones obligatorios.</p>
+
+  <div class="microcopy-grid">
+    <div class="microcopy-row">
+      <div class="microcopy-label">Botón primario</div>
+      <div class="microcopy-text">"Ver mi ahorro" · "Solicitar retiro" · "Confirmar mis datos"</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Confirmación</div>
+      <div class="microcopy-text">"Listo, [acción] registrada." (no "Operación exitosa")</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Error del sistema</div>
+      <div class="microcopy-text">"Algo no salió como esperábamos. Intenta de nuevo o escríbenos." (no "Error 500")</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Error del usuario</div>
+      <div class="microcopy-text">"Falta [dato]. Lo necesitamos para [razón]." (no "Campo requerido")</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Cargando</div>
+      <div class="microcopy-text">"Calculando tu rendimiento…" (no "Cargando…")</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Estado vacío</div>
+      <div class="microcopy-text">"Aquí verás tus aportaciones cuando empiece tu primer descuento por nómina."</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Acción destructiva</div>
+      <div class="microcopy-text">"¿Seguro que quieres bajar tu aportación a $[X]? Aplica desde tu próxima nómina."</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Sesión expirada</div>
+      <div class="microcopy-text">"Tu sesión cerró por seguridad. Inicia de nuevo y seguimos."</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Mantenimiento</div>
+      <div class="microcopy-text">"Estamos haciendo mejoras. Volvemos en [tiempo]. Tu ahorro sigue creciendo."</div>
+    </div>
+    <div class="microcopy-row">
+      <div class="microcopy-label">Sin permiso</div>
+      <div class="microcopy-text">"Esta acción la maneja tu RH. Si necesitas ayuda, escríbenos."</div>
+    </div>
+  </div>
+
+  <h2>Reglas duras de microcopy</h2>
+  <div class="logo-rules">
+    <div class="logo-rules-title">✕ Cero tolerancia</div>
+    <ul>
+      <li>"404", "500", "operación", "transacción", "instrumento"</li>
+      <li>"Lamentamos los inconvenientes" sin acción concreta después</li>
+      <li>Exclamaciones múltiples (!!!)</li>
+      <li>MAYÚSCULAS para énfasis (usar bold)</li>
+      <li>Errores sin proponer siguiente paso</li>
+      <li>Estados de error sin canal humano disponible</li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider-thick"></div>
+
+<!-- ============== 12 CHECKLIST ============== -->
+<div class="section" id="checklist">
+  <div class="section-header">
+    <div class="section-num">12 · Checklist final</div>
+  </div>
+
+  <div class="checklist">
+    <div class="checklist-title">Antes de publicar.</div>
+    <div class="checklist-sub">Si una sola casilla queda sin marcar, la pieza NO sale.</div>
+
+    <div class="checklist-grid">
+      <div class="checklist-col">
+        <h4>Visual</h4>
+        <div class="checklist-item"><div class="check-box"></div>Fondo principal #FAF9F5 (no blanco puro)</div>
+        <div class="checklist-item"><div class="check-box"></div>Logo correcto, con espacio de respeto</div>
+        <div class="checklist-item"><div class="check-box"></div>Solo Poppins, ningún otro font</div>
+        <div class="checklist-item"><div class="check-box"></div>Proporción 60-30-10 respetada</div>
+        <div class="checklist-item"><div class="check-box"></div>Naranja solo en CTAs y datos clave</div>
+        <div class="checklist-item"><div class="check-box"></div>Iconos lineales monocromáticos</div>
+        <div class="checklist-item"><div class="check-box"></div>Cards con borde sutil, sin sombra pesada</div>
+
+        <h4 style="margin-top: 24px;">Voz</h4>
+        <div class="checklist-item"><div class="check-box"></div>Tuteo consistente</div>
+        <div class="checklist-item"><div class="check-box"></div>Cero palabras prohibidas</div>
+        <div class="checklist-item"><div class="check-box"></div>Cero "¡!" múltiples ni MAYÚSCULAS</div>
+        <div class="checklist-item"><div class="check-box"></div>CTAs con verbo claro</div>
+        <div class="checklist-item"><div class="check-box"></div>Frases cortas, una idea por oración</div>
+      </div>
+
+      <div class="checklist-col">
+        <h4>Compliance</h4>
+        <div class="checklist-item"><div class="check-box"></div>Cero promesas de rendimiento</div>
+        <div class="checklist-item"><div class="check-box"></div>Disclaimer si se menciona % o número</div>
+        <div class="checklist-item"><div class="check-box"></div>CERO mención de empresa matriz</div>
+        <div class="checklist-item"><div class="check-box"></div>Aviso de privacidad enlazado</div>
+        <div class="checklist-item"><div class="check-box"></div>Datos de contacto en dabox.mx</div>
+
+        <h4 style="margin-top: 24px;">Estructura</h4>
+        <div class="checklist-item"><div class="check-box"></div>CTA único y claro por sección</div>
+        <div class="checklist-item"><div class="check-box"></div>Footer minimalista, no saturado</div>
+        <div class="checklist-item"><div class="check-box"></div>Versión móvil revisada</div>
+        <div class="checklist-item"><div class="check-box"></div>Tap targets ≥44px</div>
+        <div class="checklist-item"><div class="check-box"></div>Contraste ≥4.5:1 en body</div>
+        <div class="checklist-item"><div class="check-box"></div>Tagline o promesa central presente</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============== FOOTER ============== -->
+<div class="footer">
+  <div class="footer-logo">
+    <svg width="36" height="36" class="logo-isotipo footer-isotipo"><use href="#dabox-isotipo"/></svg>
+    <div class="footer-wordmark">dabox</div>
+  </div>
+  <div class="footer-text">
+    Extended Brandbook v2.0 · Abril 2026<br>
+    Documento vivo · Cualquier desviación se valida con Musa antes de aplicar.<br>
+    <span style="opacity: 0.6;">dabox SA de CV · dabox.mx · contacto@dabox.mx</span>
+  </div>
+</div>
+
+</body>
+</html>

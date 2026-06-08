@@ -1,0 +1,1778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>dabox — Extended Brandbook v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --orange-action: #FF5A00;
+  --orange-warm: #FF8125;
+  --orange-200: #FFEFE0;
+  --orange-300: #FFD9C0;
+  --orange-400: #FFB783;
+  --orange-700: #CC4800;
+  --blue: #283A7F;
+  --blue-100: #E5E8F0;
+  --blue-200: #C0C7DC;
+  --blue-400: #8E9AC2;
+  --blue-500: #5C6CA8;
+  --blue-900: #1A2655;
+  --bone: #FAF9F5;
+  --text: #141413;
+  --gray-300: #E8E6DC;
+  --gray-500: #B0AEA5;
+  --success: #788C5D;
+  --danger: #C0392B;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: var(--bone);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 48px;
+}
+
+/* ===== COVER ===== */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 64px 48px;
+  background: var(--bone);
+  position: relative;
+  overflow: hidden;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: var(--orange-200);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.cover::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: var(--blue-100);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.cover-content { position: relative; z-index: 1; }
+
+.cover-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 96px;
+}
+
+.hexagon {
+  width: 56px;
+  height: 56px;
+  background: var(--orange-action);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  position: relative;
+}
+
+.hexagon::after {
+  content: "";
+  position: absolute;
+  top: 18%;
+  left: 18%;
+  width: 64%;
+  height: 64%;
+  background: var(--bone);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.hexagon::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  width: 40%;
+  height: 40%;
+  background: var(--orange-action);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  z-index: 1;
+}
+
+.wordmark {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -1px;
+}
+
+.cover-title {
+  font-size: 88px;
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 0.95;
+  letter-spacing: -3px;
+  margin-bottom: 24px;
+}
+
+.cover-title .accent { color: var(--orange-action); }
+
+.cover-subtitle {
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--blue-500);
+  max-width: 640px;
+  line-height: 1.4;
+  margin-bottom: 32px;
+}
+
+.cover-meta {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-size: 13px;
+  color: var(--blue-500);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.cover-meta-divider {
+  width: 1px;
+  height: 14px;
+  background: var(--gray-300);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  padding: 96px 48px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--orange-700);
+  background: var(--orange-200);
+  padding: 6px 14px;
+  border-radius: 999px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 52px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  margin-top: 48px;
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 16px;
+  max-width: 720px;
+}
+
+.lead {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--blue-500);
+  font-weight: 400;
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+/* ===== ESSENCE ===== */
+.essence-quote {
+  background: var(--blue);
+  color: var(--bone);
+  padding: 48px;
+  border-radius: 24px;
+  margin: 48px 0;
+  position: relative;
+}
+
+.essence-quote-mark {
+  position: absolute;
+  top: 24px;
+  left: 36px;
+  font-size: 80px;
+  color: var(--orange-warm);
+  font-weight: 900;
+  line-height: 1;
+  font-family: Georgia, serif;
+}
+
+.essence-quote-text {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-left: 32px;
+  margin-top: 24px;
+}
+
+.essence-quote-text .highlight { color: var(--orange-warm); }
+
+.compare-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0;
+  margin: 32px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300);
+}
+
+.compare-table-header {
+  background: var(--bone);
+  padding: 16px 20px;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue-500);
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.compare-table-cell {
+  padding: 16px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid var(--gray-300);
+  border-right: 1px solid var(--gray-300);
+}
+
+.compare-table-cell:last-child { border-right: none; }
+.compare-table-cell:nth-child(3n) { border-right: none; }
+
+.compare-yes {
+  background: var(--orange-200);
+  color: var(--orange-700);
+  font-weight: 500;
+}
+
+.compare-no {
+  color: var(--gray-500);
+  text-decoration: line-through;
+}
+
+/* ===== NO-WORDS ===== */
+.no-words {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.no-word-card {
+  background: var(--bone);
+  border: 2px dashed var(--danger);
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+}
+
+.no-word-x {
+  font-size: 32px;
+  color: var(--danger);
+  margin-bottom: 8px;
+  font-weight: 300;
+}
+
+.no-word-label {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+.no-word-sub {
+  font-size: 13px;
+  color: var(--blue-500);
+}
+
+/* ===== REFERENCES ===== */
+.refs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.ref-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.ref-card-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange-700);
+  margin-bottom: 8px;
+}
+
+.ref-card-brands {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.ref-card-desc {
+  font-size: 14px;
+  color: var(--blue-500);
+  line-height: 1.5;
+}
+
+.synthesis-card {
+  background: var(--orange-action);
+  color: var(--bone);
+  border-radius: 24px;
+  padding: 48px;
+  margin: 32px 0;
+  text-align: center;
+}
+
+.synthesis-card-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 16px;
+}
+
+.synthesis-card-text {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ===== COLORS ===== */
+.color-system {
+  margin: 48px 0;
+}
+
+.color-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.color-row-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.color-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300);
+  background: var(--bone);
+}
+
+.color-swatch {
+  height: 140px;
+  width: 100%;
+  position: relative;
+}
+
+.color-swatch-large { height: 200px; }
+
+.color-info {
+  padding: 16px;
+}
+
+.color-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--blue);
+  margin-bottom: 4px;
+}
+
+.color-hex {
+  font-size: 12px;
+  color: var(--blue-500);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.5px;
+}
+
+.color-role {
+  font-size: 11px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* ===== PROPORTION 60-30-10 ===== */
+.proportion-bar {
+  display: flex;
+  height: 80px;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 32px 0 16px;
+  border: 1px solid var(--gray-300);
+}
+
+.prop-60 {
+  background: var(--bone);
+  flex: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--blue);
+  border-right: 1px solid var(--gray-300);
+}
+
+.prop-30 {
+  background: var(--blue);
+  flex: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--bone);
+}
+
+.prop-10 {
+  background: var(--orange-action);
+  flex: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--bone);
+}
+
+.prop-labels {
+  display: grid;
+  grid-template-columns: 6fr 3fr 1fr;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 32px;
+}
+
+.prop-label {
+  text-align: center;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.type-stack {
+  margin: 32px 0;
+}
+
+.type-row {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--gray-300);
+  align-items: center;
+}
+
+.type-meta {
+  font-size: 12px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
+
+.type-meta strong {
+  display: block;
+  color: var(--blue);
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.type-sample-hero {
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.type-sample-h1 {
+  font-size: 44px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.05;
+  letter-spacing: -1px;
+}
+
+.type-sample-h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--blue);
+  line-height: 1.15;
+}
+
+.type-sample-h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.type-sample-body {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.type-sample-caption {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--gray-500);
+}
+
+/* ===== VOICE ===== */
+.voice-attrs {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.voice-attr {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.voice-attr-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.voice-attr-desc {
+  font-size: 12px;
+  color: var(--blue-500);
+  line-height: 1.4;
+}
+
+.dictionary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.dict-card {
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.dict-yes {
+  background: var(--orange-200);
+  border: 1px solid var(--orange-300);
+}
+
+.dict-no {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+}
+
+.dict-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.dict-yes .dict-title { color: var(--orange-700); }
+.dict-no .dict-title { color: var(--danger); }
+
+.dict-words {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.dict-word {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.dict-no .dict-word {
+  text-decoration: line-through;
+  color: var(--gray-500);
+  background: var(--bone);
+}
+
+/* ===== HEADLINES ===== */
+.headlines-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 32px 0;
+}
+
+.headline-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 28px;
+  position: relative;
+}
+
+.headline-card.recommended {
+  border: 2px solid var(--orange-action);
+  background: var(--orange-200);
+}
+
+.headline-letter {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.headline-card.recommended .headline-letter {
+  background: var(--orange-action);
+}
+
+.recommended-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: var(--orange-action);
+  color: var(--bone);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.headline-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--blue-500);
+  margin-bottom: 12px;
+}
+
+.headline-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--blue);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+/* ===== ANTI-PATTERNS ===== */
+.anti-table {
+  margin: 32px 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--gray-300);
+}
+
+.anti-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.anti-row:last-child { border-bottom: none; }
+
+.anti-cell {
+  padding: 20px 24px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.anti-bad {
+  background: var(--bone);
+  color: var(--gray-500);
+  border-right: 1px solid var(--gray-300);
+}
+
+.anti-bad::before {
+  content: "✕";
+  display: inline-block;
+  color: var(--danger);
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.anti-good {
+  background: var(--orange-200);
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.anti-good::before {
+  content: "✓";
+  display: inline-block;
+  color: var(--success);
+  margin-right: 8px;
+  font-weight: 700;
+}
+
+.anti-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.anti-header > div {
+  padding: 16px 24px;
+}
+
+.anti-header > div:first-child {
+  border-right: 1px solid var(--blue-900);
+}
+
+/* ===== HERO MOCKUP ===== */
+.hero-mockup {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 24px;
+  padding: 64px 48px;
+  margin: 48px 0;
+  position: relative;
+}
+
+.hero-mockup-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--blue);
+  color: var(--bone);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.hero-mockup-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.hero-mockup-headline {
+  font-size: 44px;
+  font-weight: 900;
+  color: var(--blue);
+  line-height: 1.05;
+  letter-spacing: -1.5px;
+  margin-bottom: 20px;
+}
+
+.hero-mockup-sub {
+  font-size: 16px;
+  color: var(--text);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-mockup-ctas {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn-primary {
+  background: var(--orange-action);
+  color: var(--bone);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--blue);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 14px 24px;
+  border: 1.5px solid var(--blue);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.trust-strip {
+  font-size: 12px;
+  color: var(--blue-500);
+  font-weight: 500;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.trust-dot {
+  color: var(--orange-action);
+}
+
+.hero-visual {
+  background: var(--orange-200);
+  border-radius: 20px;
+  padding: 32px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fake-portal {
+  background: var(--bone);
+  border-radius: 14px;
+  padding: 24px;
+  width: 100%;
+  box-shadow: 0 4px 24px rgba(40,58,127,0.08);
+}
+
+.fake-portal-label {
+  font-size: 11px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.fake-portal-amount {
+  font-size: 32px;
+  font-weight: 900;
+  color: var(--orange-action);
+  line-height: 1;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.fake-portal-bar {
+  background: var(--gray-300);
+  height: 6px;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.fake-portal-bar-fill {
+  background: var(--orange-action);
+  height: 100%;
+  width: 68%;
+}
+
+.fake-portal-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--blue-500);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--gray-300);
+}
+
+.fake-portal-row:last-child { border-bottom: none; }
+
+.fake-portal-row strong {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+/* ===== COMPONENTS ===== */
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.component-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.component-tag {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--blue-500);
+  margin-bottom: 16px;
+}
+
+.component-demo {
+  background: var(--blue-100);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  margin-bottom: 16px;
+}
+
+.component-code {
+  background: var(--text);
+  color: var(--orange-warm);
+  font-family: 'Courier New', monospace;
+  font-size: 12px;
+  padding: 16px;
+  border-radius: 8px;
+  line-height: 1.6;
+  overflow-x: auto;
+}
+
+.demo-input {
+  background: var(--bone);
+  border: 1.5px solid var(--gray-300);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--text);
+  width: 100%;
+  outline: none;
+}
+
+.demo-badge {
+  background: var(--orange-200);
+  color: var(--orange-700);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.demo-card {
+  background: var(--bone);
+  border: 1px solid var(--gray-300);
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.demo-card-label {
+  font-size: 11px;
+  color: var(--blue-500);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.demo-card-value {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--blue);
+}
+
+/* ===== CHECKLIST ===== */
+.checklist {
+  background: var(--blue);
+  color: var(--bone);
+  border-radius: 24px;
+  padding: 48px;
+  margin: 48px 0;
+}
+
+.checklist-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.checklist-sub {
+  color: var(--blue-200);
+  margin-bottom: 32px;
+}
+
+.checklist-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.checklist-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--orange-warm);
+  margin-bottom: 12px;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 8px 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: var(--blue-100);
+}
+
+.check-box {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--blue-200);
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 64px 48px;
+  background: var(--bone);
+  border-top: 1px solid var(--gray-300);
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.footer-hexagon {
+  width: 32px;
+  height: 32px;
+  background: var(--orange-action);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  position: relative;
+}
+
+.footer-hexagon::after {
+  content: "";
+  position: absolute;
+  top: 18%; left: 18%;
+  width: 64%; height: 64%;
+  background: var(--bone);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+}
+
+.footer-hexagon::before {
+  content: "";
+  position: absolute;
+  top: 30%; left: 30%;
+  width: 40%; height: 40%;
+  background: var(--orange-action);
+  clip-path: polygon(25% 5%, 75% 5%, 100% 50%, 75% 95%, 25% 95%, 0% 50%);
+  z-index: 1;
+}
+
+.footer-wordmark {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--blue);
+  letter-spacing: -0.5px;
+}
+
+.footer-text {
+  font-size: 13px;
+  color: var(--blue-500);
+  line-height: 1.6;
+}
+
+/* divider */
+.divider {
+  height: 1px;
+  background: var(--gray-300);
+  margin: 64px 0;
+}
+
+@media print {
+  .section { page-break-inside: avoid; }
+  .cover { page-break-after: always; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== COVER ===== -->
+<div class="cover">
+  <div class="cover-content">
+    <div class="cover-logo">
+      <div class="hexagon"></div>
+      <div class="wordmark">dabox</div>
+    </div>
+
+    <div>
+      <div class="cover-title">Extended<br>Brand<span class="accent">book</span></div>
+      <div class="cover-subtitle">La fuente de verdad visual y verbal para diseñar el producto, la web y la comunicación de dabox.</div>
+    </div>
+  </div>
+
+  <div class="cover-meta">
+    <span>v1.0</span>
+    <div class="cover-meta-divider"></div>
+    <span>Abril 2026</span>
+    <div class="cover-meta-divider"></div>
+    <span>Confidencial · uso interno</span>
+  </div>
+</div>
+
+<!-- ===== ESSENCE ===== -->
+<div class="section">
+  <div class="section-tag">01 · Esencia</div>
+  <h1>La marca, en una sola línea.</h1>
+  <p class="lead">Antes de hablar de colores y tipografía, hay que tener claro qué somos y qué no somos. Todo el resto del libro depende de esto.</p>
+
+  <div class="essence-quote">
+    <div class="essence-quote-mark">"</div>
+    <div class="essence-quote-text">dabox es la <span class="highlight">caja de ahorro digital</span> que las PyMEs mexicanas siempre debieron tener. Hacemos que el ahorro de los colaboradores sea simple para RH, transparente para finanzas, y motivador para quien ahorra.</div>
+  </div>
+
+  <h2>Personalidad de marca</h2>
+  <p class="lead">dabox es <strong>el aliado financiero que cree en la gente.</strong> No es un banco. No es una app fría. No es un coach motivacional inflado. Es la voz tranquila que dice: <em>"tu equipo puede tener salud financiera, y empieza por algo simple."</em></p>
+
+  <div class="compare-table">
+    <div class="compare-table-header">Eje</div>
+    <div class="compare-table-header">Somos</div>
+    <div class="compare-table-header">No somos</div>
+
+    <div class="compare-table-cell"><strong>Tono</strong></div>
+    <div class="compare-table-cell compare-yes">Cálido + profesional</div>
+    <div class="compare-table-cell compare-no">Acartonado, institucional viejo</div>
+
+    <div class="compare-table-cell"><strong>Energía</strong></div>
+    <div class="compare-table-cell compare-yes">Optimista, con propósito</div>
+    <div class="compare-table-cell compare-no">Eufórico, "¡¡lo lograrás!!"</div>
+
+    <div class="compare-table-cell"><strong>Confianza</strong></div>
+    <div class="compare-table-cell compare-yes">Transparente, con datos</div>
+    <div class="compare-table-cell compare-no">Vendedor de promesas</div>
+
+    <div class="compare-table-cell"><strong>Cercanía</strong></div>
+    <div class="compare-table-cell compare-yes">Tuteo, segunda persona</div>
+    <div class="compare-table-cell compare-no">Paternalista, "estimado cliente"</div>
+
+    <div class="compare-table-cell"><strong>Estética</strong></div>
+    <div class="compare-table-cell compare-yes">Minimalista premium con calidez</div>
+    <div class="compare-table-cell compare-no">Frío Silicon Valley o saturado fintech</div>
+  </div>
+
+  <h3>Las 3 palabras que dabox NO debe ser</h3>
+  <div class="no-words">
+    <div class="no-word-card">
+      <div class="no-word-x">×</div>
+      <div class="no-word-label">Aburrido</div>
+      <div class="no-word-sub">Somos institucionales,<br>no cementerios</div>
+    </div>
+    <div class="no-word-card">
+      <div class="no-word-x">×</div>
+      <div class="no-word-label">Bancario</div>
+      <div class="no-word-sub">Cero estética de<br>banco tradicional</div>
+    </div>
+    <div class="no-word-card">
+      <div class="no-word-x">×</div>
+      <div class="no-word-label">Complicado</div>
+      <div class="no-word-sub">Cero jerga,<br>cero pasos extra</div>
+    </div>
+  </div>
+
+  <h2>Norte estético</h2>
+  <p class="lead">Las marcas que admiramos y que dabox debe "oler" parecido:</p>
+
+  <div class="refs-grid">
+    <div class="ref-card">
+      <div class="ref-card-tag">Inspiración 01</div>
+      <div class="ref-card-brands">Nu · Klar · Revolut</div>
+      <div class="ref-card-desc">Calidez de color, hero con persona real, copy directo, sensación de "esto sí es para mí". Fintech humanizada, sin pose.</div>
+    </div>
+    <div class="ref-card">
+      <div class="ref-card-tag">Inspiración 02</div>
+      <div class="ref-card-brands">Stripe · Linear</div>
+      <div class="ref-card-desc">Minimalismo premium, espacios generosos, tipografía como protagonista, gradientes sutiles, micro-interacciones precisas.</div>
+    </div>
+  </div>
+
+  <div class="synthesis-card">
+    <div class="synthesis-card-label">La síntesis dabox</div>
+    <div class="synthesis-card-text">"Si Stripe y Nu hicieran un producto financiero para RH de PyME mexicana, así se vería."</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== COLOR ===== -->
+<div class="section">
+  <div class="section-tag">02 · Color</div>
+  <h1>Tres colores oficiales.<br>Una proporción sagrada.</h1>
+  <p class="lead">El naranja domina los momentos de acción. El azul ancla la confianza. Los neutros respiran. Si rompes la proporción, rompes la marca.</p>
+
+  <h2>Colores primarios</h2>
+  <div class="color-row-3">
+    <div class="color-card">
+      <div class="color-swatch color-swatch-large" style="background: #FF5A00;"></div>
+      <div class="color-info">
+        <div class="color-role">Principal</div>
+        <div class="color-name">Naranja Acción</div>
+        <div class="color-hex">#FF5A00 · 255, 90, 0</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch color-swatch-large" style="background: #FF8125;"></div>
+      <div class="color-info">
+        <div class="color-role">Secundario</div>
+        <div class="color-name">Naranja Cálido</div>
+        <div class="color-hex">#FF8125 · 255, 129, 37</div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch color-swatch-large" style="background: #283A7F;"></div>
+      <div class="color-info">
+        <div class="color-role">Institucional</div>
+        <div class="color-name" style="color: #283A7F;">Azul dabox</div>
+        <div class="color-hex">#283A7F · 40, 58, 127</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Paleta naranja extendida</h3>
+  <div class="color-row">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FFEFE0;"></div>
+      <div class="color-info"><div class="color-name">Pastel</div><div class="color-hex">#FFEFE0</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FFD9C0;"></div>
+      <div class="color-info"><div class="color-name">Suave</div><div class="color-hex">#FFD9C0</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FFB783;"></div>
+      <div class="color-info"><div class="color-name">Crema</div><div class="color-hex">#FFB783</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #FF8125;"></div>
+      <div class="color-info"><div class="color-name">Cálido</div><div class="color-hex">#FF8125</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #CC4800;"></div>
+      <div class="color-info"><div class="color-name">Oscuro</div><div class="color-hex">#CC4800</div></div>
+    </div>
+  </div>
+
+  <h3>Paleta azul extendida</h3>
+  <div class="color-row">
+    <div class="color-card">
+      <div class="color-swatch" style="background: #E5E8F0;"></div>
+      <div class="color-info"><div class="color-name">Niebla</div><div class="color-hex">#E5E8F0</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #C0C7DC;"></div>
+      <div class="color-info"><div class="color-name">Pastel</div><div class="color-hex">#C0C7DC</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #8E9AC2;"></div>
+      <div class="color-info"><div class="color-name">Suave</div><div class="color-hex">#8E9AC2</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #5C6CA8;"></div>
+      <div class="color-info"><div class="color-name">Medio</div><div class="color-hex">#5C6CA8</div></div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background: #1A2655;"></div>
+      <div class="color-info"><div class="color-name">Oscuro</div><div class="color-hex">#1A2655</div></div>
+    </div>
+  </div>
+
+  <h2>Regla 60–30–10</h2>
+  <p>La proporción que evita que la marca se sienta saturada o fría.</p>
+
+  <div class="proportion-bar">
+    <div class="prop-60">60%</div>
+    <div class="prop-30">30%</div>
+    <div class="prop-10">10%</div>
+  </div>
+  <div class="prop-labels">
+    <div class="prop-label">Fondos · espacio · respiración<br><strong style="color: var(--blue); font-size: 13px;">Blanco hueso + Azul niebla</strong></div>
+    <div class="prop-label">Texto · headings · ancla<br><strong style="color: var(--blue); font-size: 13px;">Azul dabox</strong></div>
+    <div class="prop-label">CTAs · datos<br><strong style="color: var(--blue); font-size: 13px;">Naranja</strong></div>
+  </div>
+
+  <p style="background: var(--orange-200); border-left: 4px solid var(--orange-action); padding: 16px 20px; border-radius: 8px; color: var(--orange-700); font-weight: 500;">
+    🚨 Si una pieza tiene más de 25% de naranja, está saturada. Reducir y dejar respirar.
+  </p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== TYPOGRAPHY ===== -->
+<div class="section">
+  <div class="section-tag">03 · Tipografía</div>
+  <h1>Una sola familia. Jerarquía por peso.</h1>
+  <p class="lead">Poppins en todos sus pesos. Si necesitas más voz, no añadas otra fuente: ajusta el tamaño y el peso. La disciplina tipográfica es lo que hace que dabox se lea premium.</p>
+
+  <div class="type-stack">
+    <div class="type-row">
+      <div class="type-meta"><strong>Hero</strong>Black 900 · 64pt</div>
+      <div class="type-sample-hero">Hace crecer.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>H1</strong>ExtraBold 800 · 48pt</div>
+      <div class="type-sample-h1">Tu equipo merece ahorrar bien.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>H2</strong>Bold 700 · 32pt</div>
+      <div class="type-sample-h2">Cómo funciona en 3 pasos</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>H3</strong>SemiBold 600 · 22pt</div>
+      <div class="type-sample-h3">Descuento automático por nómina</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Body</strong>Regular 400 · 16pt</div>
+      <div class="type-sample-body">Implementa una caja de ahorro digital en menos de 30 días. Tu RH solo aprueba; nosotros operamos.</div>
+    </div>
+    <div class="type-row">
+      <div class="type-meta"><strong>Caption</strong>Light 300 · 12pt</div>
+      <div class="type-sample-caption">Rendimiento atado a CETES, sujeto a variabilidad de mercado.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== VOICE ===== -->
+<div class="section">
+  <div class="section-tag">04 · Voz</div>
+  <h1>Cinco atributos que siempre están.</h1>
+  <p class="lead">La voz no cambia entre canales. El tono sí. Pero estos cinco rasgos son el ADN: si un mensaje no los tiene, no es dabox.</p>
+
+  <div class="voice-attrs">
+    <div class="voice-attr">
+      <div class="voice-attr-name">Cercano</div>
+      <div class="voice-attr-desc">Trato humano, sin fricción innecesaria</div>
+    </div>
+    <div class="voice-attr">
+      <div class="voice-attr-name">Claro</div>
+      <div class="voice-attr-desc">Sin tecnicismos cuando hablamos al usuario</div>
+    </div>
+    <div class="voice-attr">
+      <div class="voice-attr-name">Confiable</div>
+      <div class="voice-attr-desc">Responsable, transparente, sin promesas vagas</div>
+    </div>
+    <div class="voice-attr">
+      <div class="voice-attr-name">Optimista</div>
+      <div class="voice-attr-desc">Crecimiento, prosperidad, posibilidad</div>
+    </div>
+    <div class="voice-attr">
+      <div class="voice-attr-name">Práctico</div>
+      <div class="voice-attr-desc">Útil, accionable, sin filosofar</div>
+    </div>
+  </div>
+
+  <h2>Diccionario de marca</h2>
+  <p>Las palabras que construyen marca y las que la destruyen.</p>
+
+  <div class="dictionary">
+    <div class="dict-card dict-yes">
+      <div class="dict-title">✓ Palabras señal · Úsalas</div>
+      <div class="dict-words">
+        <span class="dict-word">crecer</span>
+        <span class="dict-word">ahorrar</span>
+        <span class="dict-word">tu gente</span>
+        <span class="dict-word">tu equipo</span>
+        <span class="dict-word">bienestar</span>
+        <span class="dict-word">simple</span>
+        <span class="dict-word">claro</span>
+        <span class="dict-word">mes con mes</span>
+        <span class="dict-word">beneficio</span>
+        <span class="dict-word">sumar</span>
+        <span class="dict-word">acompañar</span>
+        <span class="dict-word">transparente</span>
+        <span class="dict-word">justo</span>
+        <span class="dict-word">sin complicaciones</span>
+        <span class="dict-word">sin costo</span>
+        <span class="dict-word">tu calma</span>
+        <span class="dict-word">listo</span>
+        <span class="dict-word">plug-and-play</span>
+      </div>
+    </div>
+    <div class="dict-card dict-no">
+      <div class="dict-title">✕ Palabras prohibidas · Evítalas</div>
+      <div class="dict-words">
+        <span class="dict-word">inversión</span>
+        <span class="dict-word">captación</span>
+        <span class="dict-word">banco</span>
+        <span class="dict-word">banca</span>
+        <span class="dict-word">plazo forzoso</span>
+        <span class="dict-word">rendimiento garantizado</span>
+        <span class="dict-word">producto financiero</span>
+        <span class="dict-word">tasa fija</span>
+        <span class="dict-word">depósito</span>
+        <span class="dict-word">instrumento</span>
+        <span class="dict-word">innovador</span>
+        <span class="dict-word">líder</span>
+        <span class="dict-word">disruptivo</span>
+        <span class="dict-word">revolucionario</span>
+        <span class="dict-word">soluciones</span>
+        <span class="dict-word">de punta</span>
+        <span class="dict-word">cutting-edge</span>
+        <span class="dict-word">estimados clientes</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== HEADLINES ===== -->
+<div class="section">
+  <div class="section-tag">05 · Headlines</div>
+  <h1>Cinco opciones para el hero.</h1>
+  <p class="lead">Todas siguen la misma fórmula: <strong>beneficio concreto + tu gente + sin complicaciones.</strong> Una está marcada como recomendada para web RH/PyME.</p>
+
+  <div class="headlines-grid">
+    <div class="headline-card">
+      <div class="headline-letter">A</div>
+      <div class="headline-tag">Directa, foco RH</div>
+      <div class="headline-text">Caja de ahorro digital para tu equipo. Sin papeles. Sin caja chica. Sin dolores de cabeza.</div>
+    </div>
+
+    <div class="headline-card">
+      <div class="headline-letter">B</div>
+      <div class="headline-tag">Bienestar primero</div>
+      <div class="headline-text">Ahorrar bien es un beneficio. Hacerlo simple, también.</div>
+    </div>
+
+    <div class="headline-card">
+      <div class="headline-letter">C</div>
+      <div class="headline-tag">Confianza + crecimiento</div>
+      <div class="headline-text">El ahorro de tu gente, creciendo cada mes.</div>
+    </div>
+
+    <div class="headline-card">
+      <div class="headline-letter">D</div>
+      <div class="headline-tag">Anti-banco</div>
+      <div class="headline-text">Cajas de ahorro como deberían ser: digitales, transparentes y sin letra chiquita.</div>
+    </div>
+
+    <div class="headline-card recommended" style="grid-column: span 2;">
+      <div class="recommended-badge">Recomendada</div>
+      <div class="headline-letter">E</div>
+      <div class="headline-tag">Foco operación liviana · Ideal para RH/PyME</div>
+      <div class="headline-text" style="font-size: 28px;">Un beneficio real para tu equipo. Cero carga operativa para ti.</div>
+    </div>
+  </div>
+
+  <h2>Mockup del hero recomendado</h2>
+  <p>Así debería verse aplicado. Compara contra tu web actual y verás dónde están las diferencias.</p>
+
+  <div class="hero-mockup">
+    <div class="hero-mockup-tag">Vista preview · Hero ideal</div>
+    <div class="hero-mockup-grid">
+      <div>
+        <div class="hero-mockup-headline">Un beneficio real para tu equipo. <span style="color: var(--orange-action);">Cero carga operativa</span> para ti.</div>
+        <div class="hero-mockup-sub">Implementa una caja de ahorro digital en menos de 30 días. Descuento por nómina, rendimiento atado a CETES y portal del colaborador. Tu RH solo aprueba; nosotros operamos.</div>
+        <div class="hero-mockup-ctas">
+          <button class="btn-primary">Agenda 20 minutos</button>
+          <button class="btn-secondary">Cómo funciona</button>
+        </div>
+        <div class="trust-strip">
+          <span><span class="trust-dot">●</span> Vehículo institucional</span>
+          <span><span class="trust-dot">●</span> Marco legal AC + comité</span>
+          <span><span class="trust-dot">●</span> Rendimiento atado a CETES</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="fake-portal">
+          <div class="fake-portal-label">Tu ahorro</div>
+          <div class="fake-portal-amount">$12,480</div>
+          <div class="fake-portal-bar"><div class="fake-portal-bar-fill"></div></div>
+          <div class="fake-portal-row"><span>Aportación mensual</span><strong>$600</strong></div>
+          <div class="fake-portal-row"><span>Rendimiento</span><strong style="color: var(--orange-action);">+CETES</strong></div>
+          <div class="fake-portal-row"><span>Próximo retiro</span><strong>Diciembre</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== ANTI-PATTERNS ===== -->
+<div class="section">
+  <div class="section-tag">06 · Anti-patrones</div>
+  <h1>Lo que hace que tu web se vea genérica.</h1>
+  <p class="lead">A la izquierda, lo que está haciendo cualquier web genérica de fintech latinoamericana. A la derecha, la versión dabox.</p>
+
+  <div class="anti-table">
+    <div class="anti-header">
+      <div>Genérico</div>
+      <div>dabox</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Stock photo de gente con manos juntas o apretón de manos.</div>
+      <div class="anti-cell anti-good">Mockup limpio del portal en laptop/móvil sobre fondo crema.</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Hero centrado con gradiente azul → naranja saturado.</div>
+      <div class="anti-cell anti-good">Hero asimétrico: texto izq, mockup der, sobre blanco hueso.</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">"Únete a la revolución del ahorro"</div>
+      <div class="anti-cell anti-good">"Tu gente merece un beneficio que se note."</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Iconos planos coloridos genéricos (estilo Flaticon).</div>
+      <div class="anti-cell anti-good">Iconos lineales monocromáticos, azul dabox, peso 1.5pt.</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">"¡!" múltiples y MAYÚSCULAS para énfasis.</div>
+      <div class="anti-cell anti-good">Punto y aparte. Bold para énfasis. Copy descansado.</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">CTAs genéricos: "Conoce más" / "Click aquí".</div>
+      <div class="anti-cell anti-good">CTAs con verbo: "Agenda 20 minutos" / "Cómo funciona".</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Cards con sombras pesadas (box-shadow grandes).</div>
+      <div class="anti-cell anti-good">Borde sutil #E8E6DC + sombra mínima 0 1px 3px rgba(0,0,0,.04).</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Body text sobre blanco puro #FFFFFF.</div>
+      <div class="anti-cell anti-good">Body text sobre #FAF9F5 (calidez sutil estilo Stripe).</div>
+    </div>
+
+    <div class="anti-row">
+      <div class="anti-cell anti-bad">Centrar todos los párrafos.</div>
+      <div class="anti-cell anti-good">Solo headline y CTA centrados; párrafos a la izquierda.</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== COMPONENTS ===== -->
+<div class="section">
+  <div class="section-tag">07 · Componentes</div>
+  <h1>Bloques base de UI.</h1>
+  <p class="lead">Los componentes que construyen la web y el producto. Specs listas para copiar.</p>
+
+  <div class="components-grid">
+    <div class="component-card">
+      <div class="component-tag">Botón primario</div>
+      <div class="component-demo">
+        <button class="btn-primary">Agenda 20 minutos</button>
+      </div>
+      <div class="component-code">background: #FF5A00<br>color: #FAF9F5<br>padding: 14px 28px<br>radius: 12px<br>weight: SemiBold 600</div>
+    </div>
+
+    <div class="component-card">
+      <div class="component-tag">Botón secundario</div>
+      <div class="component-demo">
+        <button class="btn-secondary">Cómo funciona</button>
+      </div>
+      <div class="component-code">background: transparent<br>color: #283A7F<br>border: 1.5px solid #283A7F<br>radius: 12px</div>
+    </div>
+
+    <div class="component-card">
+      <div class="component-tag">Input de formulario</div>
+      <div class="component-demo">
+        <input type="text" class="demo-input" placeholder="contacto@empresa.mx">
+      </div>
+      <div class="component-code">border: 1.5px solid #E8E6DC<br>radius: 10px<br>focus: border #FF5A00<br>outline: 3px rgba(255,90,0,0.15)</div>
+    </div>
+
+    <div class="component-card">
+      <div class="component-tag">Badge / Chip</div>
+      <div class="component-demo">
+        <span class="demo-badge">+CETES</span>
+      </div>
+      <div class="component-code">background: #FFEFE0<br>color: #CC4800<br>padding: 4px 10px<br>radius: 999px (pill)</div>
+    </div>
+
+    <div class="component-card" style="grid-column: span 2;">
+      <div class="component-tag">Stat card · Dato grande</div>
+      <div class="component-demo" style="display: flex; gap: 16px;">
+        <div class="demo-card">
+          <div class="demo-card-label">Implementación</div>
+          <div class="demo-card-value" style="color: var(--orange-action);">30 días</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-card-label">Cuota máxima</div>
+          <div class="demo-card-value" style="color: var(--orange-action);">&lt;30%</div>
+        </div>
+        <div class="demo-card">
+          <div class="demo-card-label">Rendimiento</div>
+          <div class="demo-card-value" style="color: var(--orange-action);">+CETES</div>
+        </div>
+      </div>
+      <div class="component-code">Valor: Naranja Acción Black 900 28pt · Label: Azul medio Medium 11pt uppercase · Card: bg #FAF9F5, borde #E8E6DC, radius 16px, padding 20px</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===== CHECKLIST ===== -->
+<div class="section">
+  <div class="checklist">
+    <div class="section-tag" style="background: var(--orange-warm); color: var(--blue-900);">08 · QA Final</div>
+    <div class="checklist-title">Checklist antes de publicar</div>
+    <div class="checklist-sub">Si una sola casilla queda sin marcar, la pieza NO sale.</div>
+
+    <div class="checklist-grid">
+      <div class="checklist-col">
+        <h4>Visual</h4>
+        <div class="checklist-item"><div class="check-box"></div>Fondo principal #FAF9F5 (no blanco puro)</div>
+        <div class="checklist-item"><div class="check-box"></div>Logo correcto, con espacio de respeto</div>
+        <div class="checklist-item"><div class="check-box"></div>Solo Poppins, ningún otro font</div>
+        <div class="checklist-item"><div class="check-box"></div>Proporción 60-30-10 respetada</div>
+        <div class="checklist-item"><div class="check-box"></div>Naranja solo en CTAs y datos clave</div>
+        <div class="checklist-item"><div class="check-box"></div>Iconos lineales monocromáticos</div>
+        <div class="checklist-item"><div class="check-box"></div>Cards con borde sutil, sin sombra pesada</div>
+
+        <h4 style="margin-top: 24px;">Voz</h4>
+        <div class="checklist-item"><div class="check-box"></div>Tuteo consistente</div>
+        <div class="checklist-item"><div class="check-box"></div>Cero palabras prohibidas</div>
+        <div class="checklist-item"><div class="check-box"></div>Cero "¡!" múltiples ni MAYÚSCULAS</div>
+        <div class="checklist-item"><div class="check-box"></div>CTAs con verbo claro</div>
+      </div>
+
+      <div class="checklist-col">
+        <h4>Compliance</h4>
+        <div class="checklist-item"><div class="check-box"></div>Cero promesas de rendimiento</div>
+        <div class="checklist-item"><div class="check-box"></div>Disclaimer si se menciona % o número</div>
+        <div class="checklist-item"><div class="check-box"></div>CERO mención de empresa matriz</div>
+        <div class="checklist-item"><div class="check-box"></div>Aviso de privacidad enlazado</div>
+        <div class="checklist-item"><div class="check-box"></div>Datos de contacto en dabox.mx</div>
+
+        <h4 style="margin-top: 24px;">Estructura</h4>
+        <div class="checklist-item"><div class="check-box"></div>CTA único y claro por sección</div>
+        <div class="checklist-item"><div class="check-box"></div>Footer minimalista, no saturado</div>
+        <div class="checklist-item"><div class="check-box"></div>Versión móvil revisada</div>
+        <div class="checklist-item"><div class="check-box"></div>Tap targets ≥44px</div>
+        <div class="checklist-item"><div class="check-box"></div>Contraste ≥4.5:1 en body</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<div class="footer">
+  <div class="footer-logo">
+    <div class="footer-hexagon"></div>
+    <div class="footer-wordmark">dabox</div>
+  </div>
+  <div class="footer-text">
+    Extended Brandbook v1.0 · Abril 2026<br>
+    Documento vivo · Cualquier desviación se valida con Musa antes de aplicar.
+  </div>
+</div>
+
+</body>
+</html>
